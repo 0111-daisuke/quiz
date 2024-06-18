@@ -1,80 +1,118 @@
+from openai import OpenAI
 import random
-import torch 
-from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
-from transformers import VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer
-from PIL import Image
+import json
 
-model = VisionEncoderDecoderModel.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
-feature_extractor = ViTImageProcessor.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
-tokenizer = AutoTokenizer.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
+client = OpenAI()
+file_path = "stock/stock.json"
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+# 司会側の条件
+def host_api(messages):
+    return client.chat.completions.create(
+        model="gpt-4-1106-preview",
+        messages=messages,
+        temperature=1,
+        max_tokens=100
+        )
 
-max_length = 16
-num_beams = 4
-gen_kwargs = {"max_length": max_length, "num_beams": num_beams}
+# 疑似パネリスト側の条件
+def gest_api(messages):
+    return client.chat.completions.create(
+        model="gpt-4-1106-preview",
+        messages=messages,
+        temperature=0.5,
+        max_tokens=100
+        )
 
-#ランダムに単語を選択
-def radword():
-  
-  # 単語のリストを用意する
-  words = ["apple", "banana", "orange", "grape", "pineapple", "watermelon", "strawberry", "kiwi", "peach", "melon"]
-  
-  # リストからランダムに1つの要素を選ぶ
-  selected_word = random.choice(words)
-  
-  return selected_word
+# JSONファイルを読み込む関数
+def read_json(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    return data
 
-#画像生成
-def imgcreate(text):
-  
-  model_id = "stabilityai/stable-diffusion-2-1-base"
-  
-  scheduler = EulerDiscreteScheduler.from_pretrained(model_id, subfolder="scheduler")
-  pipe = StableDiffusionPipeline.from_pretrained(model_id, scheduler=scheduler)
-  pipe = pipe.to(device)
-  
-  prompt = text
-  image = pipe(prompt).images[0]
+# ランダムなデータを取得する関数
+def get_random_data():
+    data = read_json(file_path)
+    random_index = random.randint(0, len(data) - 1)
+    return data[random_index]
 
-  return image
-
-#キャプション生成に必要なステップ
-def predict_step(image_paths):
-  images = []
-  for image_path in image_paths:
-     i_image = Image.open(image_path)
-     if i_image.mode != "RGB":
-       i_image = i_image.convert(mode="RGB")
-        
-     images.append(i_image)
-
-  pixel_values = feature_extractor(images=images, return_tensors="pt").pixel_values
-  pixel_values = pixel_values.to(device)
+# データの取得
+def theme():
+    random_data = get_random_data()
     
-  output_ids = model.generate(pixel_values, **gen_kwargs)
-    
-  preds = tokenizer.batch_decode(output_ids, skip_special_tokens=True)
-  preds = [pred.strip() for pred in preds]
-  return preds
+    # 各ステータスを変数に格納
+    answer = random_data["answer"]
+    image = random_data["image"]
+    candidates = random_data["candidates"]
+    feature = random_data["features"]
 
-#キャプション生成
-def captioning(img):
+    return answer, image, candidates, feature
 
-  caption = predict_step([img]) # ['a woman in a hospital bed with a woman in a hospital bed']
-  return caption
-
-#メイン文
 def main():
-  word = radword()
-  print('prompt',word)
-  
-  image = imgcreate(word)
-  image = "generated_image.png"
-  image.save("generated_image.png")
+    # データの取得
+    answer, image, candidates, feature = theme()
 
-  caption = captioning(image)
-  print(caption)
+    candidates = json.dumps(candidates)
+    feature = json.dumps(feature)
+    
+    # hostのプロンプト
+    host_messages = [
+        {"role": "system", "content": "あなたはuserとgestが行っている画像を使用したクイズの司会をしてください。"},
+        {"role": "system", "content": f"このクイズの正解は{answer}にです。"},
+        {"role": "system", "content": "クイズの正解はuserが当てるまで直接喋らないでください。"},
+        {"role": "system", "content": "画像の特徴は以下のようになっています。これらを参考にヒントを出しつつ進行してください。"},
+        {"role": "system", "content": feature}
+        ]
+    
+    # gestのプロンプト
+    gest_messages = [
+        {"role": "system", "content": "あなたは画像を見て答えるクイズに答えてください。"},
+        {"role": "system", "content": "回答の候補は以下に記します。これらの回答から根拠を交えてランダムに答えて下さい。"},
+        {"role": "system", "content": candidates},
+        {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として進行してください。"},
+        {"role": "system", "content": feature}
+        ]
+    
+    # user_input 変数を初期化
+    user_input = ""
 
-#実行
-main()
+    # 1会話目
+    response1 = host_api(host_messages)
+    res1 = response1.choices[0].message.content
+    print("host:"+res1)
+    
+    # userが会話する確率
+    user_probability = 0.5
+
+    #ここからループ
+    while True:
+        # exitと打って終了
+        if user_input.lower() == "exit":
+            break
+
+        # ランダムにuserかgestが会話
+        if random.choices([True, False], weights=[user_probability, 1 - user_probability])[0]:
+            # user
+            user_input = input("user: ")
+            if user_input.lower() == "exit":
+                break
+            host_messages.append({"role": "user", "content": user_input})
+            
+        else:
+            # gest
+            gest_messages.append({"role": "assistant", "content": res1})
+            response2 = gest_api(gest_messages)
+            res2 = response2.choices[0].message.content
+            host_messages.append({"role": "user", "content": res2})
+            print("gest:"+res2)
+            
+        # hostの返答
+        response3 = host_api(host_messages)
+        res3 = response3.choices[0].message.content
+        host_messages.append({"role": "user", "content": res3})
+        print("host:"+res3)
+        
+        # 会話を保存
+        res1 = res3
+
+if __name__ == "__main__":
+    main()
