@@ -8,19 +8,19 @@ file_path = "stock/stock.json"
 # 司会側の条件
 def host_api(messages):
     return client.chat.completions.create(
-        model="gpt-4-1106-preview",
-        messages=messages,
-        temperature=1,
-        max_tokens=100
+        model = "gpt-4-1106-prevew",
+        messages = messages,
+        temperature = 1,
+        max_tokens = 300
         )
 
 # 疑似パネリスト側の条件
 def gest_api(messages):
     return client.chat.completions.create(
-        model="gpt-4-1106-preview",
-        messages=messages,
-        temperature=0.5,
-        max_tokens=100
+        model = "gpt-4-1106-preview",
+        messages = messages,
+        temperature = 0.5,
+        max_tokens = 100
         )
 
 # JSONファイルを読み込む関数
@@ -35,7 +35,7 @@ def get_random_data():
     random_index = random.randint(0, len(data) - 1)
     return data[random_index]
 
-# データの取得
+# テーマの取得
 def theme():
     random_data = get_random_data()
     
@@ -45,14 +45,15 @@ def theme():
     candidates = random_data["candidates"]
     feature = random_data["features"]
 
+    # messagesに合わせた形式の変換
+    candidates = json.dumps(candidates)
+    feature = json.dumps(feature)
+
     return answer, image, candidates, feature
 
 def main():
     # データの取得
     answer, image, candidates, feature = theme()
-
-    candidates = json.dumps(candidates)
-    feature = json.dumps(feature)
     
     # hostのプロンプト
     host_messages = [
@@ -60,7 +61,8 @@ def main():
         {"role": "system", "content": f"このクイズの正解は{answer}にです。"},
         {"role": "system", "content": "クイズの正解はuserが当てるまで直接喋らないでください。"},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを参考にヒントを出しつつ進行してください。"},
-        {"role": "system", "content": feature}
+        {"role": "system", "content": feature},
+        {"role": "system", "content": "会話はmax_tokensの文字数以内にまとめてください。"}
         ]
     
     # gestのプロンプト
@@ -70,7 +72,8 @@ def main():
         {"role": "system", "content": candidates},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として進行してください。"},
         {"role": "system", "content": feature},
-        {"role": "system", "content": "同じ回答の候補を使わないでください。"}
+        {"role": "system", "content": "同じ回答の候補を使わないでください。"},
+        {"role": "system", "content": "会話はmax_tokensの文字数以内にまとめてください。"}
         ]
     
     # user_input 変数を初期化
@@ -91,7 +94,7 @@ def main():
             break
 
         # ランダムにuserかgestが会話
-        if random.choices([True, False], weights=[user_probability, 1 - user_probability])[0]:
+        if random.choices([True, False], weights = [user_probability, 1 - user_probability])[0]:
             # user
             user_input = input("user: ")
             if user_input.lower() == "exit":
