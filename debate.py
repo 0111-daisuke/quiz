@@ -25,13 +25,13 @@ def gest_api(messages):
 def main():
     theme = "「地球温暖化」"
 
-    #hostのプロンプト
+    # hostのプロンプト
     host_messages = [
         {"role": "system", "content": "あなたはuserとgestが行っているディベートの司会をしてください。"},
         {"role": "system", "content": f"題目は{theme}についてです。"}
         ]
     
-    #gestのプロンプト
+    # gestのプロンプト
     gest_messages = [
         {"role": "system", "content": "あなたはhostを交えてuserとディベートをしてください。"},
         {"role": "system", "content": f"題目は{theme}についてです。"}
@@ -39,42 +39,42 @@ def main():
     
     user_input = ""  # user_input変数を初期化
 
-    #冒頭1会話目
+    # 冒頭1会話目
     response1 = host_api(host_messages)
     res1 = response1.choices[0].message.content
     print("host:"+res1)
     
-    #確率
+    # 確率
     user_probability = 0.5
 
     while True:
-        #exitと打てば終了
+        # exitと打てば終了
         if user_input.lower() == "exit":
             break
 
         #ランダムにuserかgestが会話
         if random.choices([True, False], weights=[user_probability, 1 - user_probability])[0]:
-            #user
+            # user
             user_input = input("user: ")
             if user_input.lower() == "exit":
                 break
             host_messages.append({"role": "user", "content": user_input})
             
         else:
-            #gest
+            # gest
             gest_messages.append({"role": "assistant", "content": res1})
             response2 = gest_api(gest_messages)
             res2 = response2.choices[0].message.content
             host_messages.append({"role": "user", "content": res2})
             print("gest:"+res2)
             
-        #司会AIの受け答え
+        # 司会AIの受け答え
         response3 = host_api(host_messages)
         res3 = response3.choices[0].message.content
         host_messages.append({"role": "assistant", "content": res3})
         print("host:"+res3)
         
-        #1ループ目の会話を保存
+        # 1ループ目の会話を保存
         res1 = res3
 
 if __name__ == "__main__":

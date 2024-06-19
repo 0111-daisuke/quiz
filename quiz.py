@@ -69,7 +69,8 @@ def main():
         {"role": "system", "content": "回答の候補は以下に記します。これらの回答から根拠を交えてランダムに答えて下さい。"},
         {"role": "system", "content": candidates},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として進行してください。"},
-        {"role": "system", "content": feature}
+        {"role": "system", "content": feature},
+        {"role": "system", "content": "同じ回答の候補を使わないでください。"}
         ]
     
     # user_input 変数を初期化
@@ -81,9 +82,9 @@ def main():
     print("host:"+res1)
     
     # userが会話する確率
-    user_probability = 0.5
+    user_probability = 0.7
 
-    #ここからループ
+    # ここからループ
     while True:
         # exitと打って終了
         if user_input.lower() == "exit":
@@ -110,6 +111,10 @@ def main():
         res3 = response3.choices[0].message.content
         host_messages.append({"role": "user", "content": res3})
         print("host:"+res3)
+
+        # 正解したらhostの返答後終了
+        if user_input == answer:
+            break
         
         # 会話を保存
         res1 = res3
