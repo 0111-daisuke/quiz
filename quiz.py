@@ -89,14 +89,12 @@ def main():
 
     # ここからループ
     while True:
-        # exitと打って終了
-        if user_input.lower() == "exit":
-            break
 
         # ランダムにuserかgestが会話
         if random.choices([True, False], weights = [user_probability, 1 - user_probability])[0]:
             # user
             user_input = input("user: ")
+            # exitと打って終了
             if user_input.lower() == "exit":
                 break
             host_messages.append({"role": "user", "content": user_input})
