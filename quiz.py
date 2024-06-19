@@ -8,7 +8,7 @@ file_path = "stock/stock.json"
 # 司会側の条件
 def host_api(messages):
     return client.chat.completions.create(
-        model = "gpt-4-1106-prevew",
+        model = "gpt-4-1106-preview",
         messages = messages,
         temperature = 1,
         max_tokens = 300
@@ -20,7 +20,7 @@ def gest_api(messages):
         model = "gpt-4-1106-preview",
         messages = messages,
         temperature = 0.5,
-        max_tokens = 100
+        max_tokens = 300
         )
 
 # JSONファイルを読み込む関数
@@ -54,7 +54,7 @@ def theme():
 def main():
     # データの取得
     answer, image, candidates, feature = theme()
-    
+
     # hostのプロンプト
     host_messages = [
         {"role": "system", "content": "あなたはuserとgestが行っている画像を使用したクイズの司会をしてください。"},
@@ -116,7 +116,7 @@ def main():
         print("host:"+res3)
 
         # 正解したらhostの返答後終了
-        if user_input == answer:
+        if answer in user_input:
             break
         
         # 会話を保存
