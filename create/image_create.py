@@ -121,8 +121,10 @@ def generate_candidates(image):
     response = generate_candidates_api(image)
 
     candidates = response.choices[0].message.content
-    # candidates = candidates.split("、")
     candidates = ' '.join(candidates)
+    candidates = candidates.replace(" ", "")
+    candidates = candidates.replace("\n", "")
+    candidates = candidates.split("ことわざ")
 
     return candidates
 
@@ -132,8 +134,10 @@ def generate_features(image):
     response = generate_features_api(image)
 
     features = response.choices[0].message.content
-    # features = features.split("、")
     features = ' '.join(features)
+    features = features.replace(" ", "")
+    features = features.replace("\n", "")
+    features = features.split("特徴")
 
     return features
 
@@ -210,8 +214,6 @@ def main():
     # 回答候補と特徴の生成
     candidates = generate_candidates(image)
     features = generate_features(image)
-
-    print(candidates, features)
 
     # データをまとめて保存
     filename = filename.replace(f"{directory}/", "")
