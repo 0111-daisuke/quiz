@@ -1,7 +1,7 @@
 [
     {
         "answer": "石の上にも三年",
-        "image": "isinoue.png",
+        "image": "image1.png",
         "candidates": [
             "猿も木から落ちる",
             "井の中の蛙大海を知らず",
@@ -14,7 +14,7 @@
     },
     {
         "answer": "立つ鳥跡を濁さず",
-        "image": "tatutori.png",
+        "image": "image2.png",
         "candidates": [
             "果報は寝て待て",
             "千里の道も一歩から",
@@ -31,7 +31,7 @@
     },
     {
         "answer": "塵も積もれば山となる",
-        "image": "tirimotumoreba.png",
+        "image": "image3.png",
         "candidates": [
             "馬鹿の塵集め",
             "千里の道も一歩から",
@@ -47,25 +47,25 @@
     },
     {
         "answer": "縁の下の力持ち",
-        "image": "image28.png",
+        "image": "image4.png",
         "candidates": "こ と わ ざ 1 :   石 の 上 に も 三 年 \n \n こ と わ ざ 2 :   千 里 の 道 も 一 歩 か ら \n \n こ と わ ざ 3 :   塵 も 積 も れ ば 山 と な る \n \n こ と わ ざ 4 :   汗 を か か ず に 宝 を 得 る こ と は で き な い \n \n こ と わ ざ 5 :   努 力 は 人 を 裏 切 ら な い",
         "features": "特 徴 1 :   多 く の 人 々 が 階 段 状 の エ リ ア で 掃 除 を し て い る 。 \n 特 徴 2 :   大 き な ほ う き を 使 っ て 地 面 を 掃 い て い る 人 々 が い る 。 \n 特 徴 3 :   車 両 （ 車 と ト ラ ッ ク ） が 階 段 エ リ ア に 駐 車 さ れ て い る 。 \n 特 徴 4 :   掃 除 を し て い る 人 々 の 一 部 は 赤 い 服 を 着 て い る 。 \n 特 徴 5 :   各 段 に バ ケ ツ や 道 具 が 置 か れ て い る 。"
     },
     {
         "answer": "時は金なり",
-        "image": "image30.png",
+        "image": "image5.png",
         "candidates": "1 .   時 は 金 な り   ( T i m e   i s   m o n e y ) \n 2 .   無 駄 な 時 間   ( W a s t i n g   t i m e ) \n 3 .   早 起 き は 三 文 の 徳   ( T h e   e a r l y   b i r d   c a t c h e s   t h e   w o r m ) \n 4 .   光 陰 矢 の 如 し   ( T i m e   f l i e s   l i k e   a n   a r r o w ) \n 5 .   後 悔 先 に 立 た ず   ( I t ' s   n o   u s e   c r y i n g   o v e r   s p i l t   m i l k )",
         "features": "特 徴 1 :   中 央 に 「 T I M E   I S   M O N E Y 」 と 書 か れ た 時 計 の イ ラ ス ト が あ る 。 \n 特 徴 2 :   周 囲 に お 金 や 経 済 に 関 連 す る ア イ コ ン が 複 数 配 置 さ れ て い る （ ド ル 記 号 、 電 球 、 コ イ ン な ど ） 。 \n 特 徴 3 :   カ レ ン ダ ー や 書 類 、 コ ン ピ ュ ー タ 画 面 な ど の ビ ジ ネ ス ツ ー ル の ア イ コ ン が あ る 。 \n 特 徴 4 :   歯 車 や ロ ケ ッ ト な ど の 機 械 的 な イ ラ ス ト が 使 わ れ て い る 。 \n 特 徴 5 :   全 体 的 に 青 と 黄 色 、 黒 を 基 調 と し た 色 使 い が さ れ て い る 。"
     },
     {
         "answer": "塞翁が馬",
-        "image": "image31.png",
+        "image": "image6.png",
         "candidates": "1 .   災 い 転 じ て 福 と な す \n 2 .   苦 し い 時 の 神 頼 み \n 3 .   雨 降 っ て 地 固 ま る \n 4 .   失 敗 は 成 功 の も と \n 5 .   七 転 び 八 起 き",
         "features": "1 .   特 徴 1 :   画 像 の 中 心 に は 「 D I S A S T E R   M A Y   B E   A   A C T U U A L   B L E S S I N G 」 と 書 か れ た 文 字 が あ る 。 \n 2 .   特 徴 2 :   画 像 の 中 心 に は ト ラ ク タ ー に 乗 っ た 農 民 の イ ラ ス ト が 描 か れ て い る 。 \n 3 .   特 徴 3 :   画 像 の 周 囲 に は 農 業 や 自 然 に 関 連 す る 様 々 な イ ラ ス ト が 描 か れ て い る （ 例 え ば 、 太 陽 、 雨 、 家 畜 な ど ） 。 \n 4 .   特 徴 4 :   画 像 は 主 に 赤 、 青 、 ベ ー ジ ュ の 3 色 で 構 成 さ れ て い る 。 \n 5 .   特 徴 5 :   画 像 の 周 囲 に は ミ ス ス ペ ル さ れ て い る 英 単 語 が ラ ン ダ ム に 並 ん で い る 。"
     },
     {
         "answer": "灯台下暗し",
-        "image": "image33.png",
+        "image": "image7.png",
         "candidates": [
             "1.「灯台下暗し」2.「船頭多くして船山に上る」3.「一寸先は闇」4.「海は広いな大きいな」5.「明けない夜はない」"
         ],
@@ -79,7 +79,7 @@
     },
     {
         "answer": "住めば都",
-        "image": "image34.png",
+        "image": "image8.png",
         "candidates": [
             "わかっていることの一部に基づき、挙げられる",
             "を5つ提示します。1.",
@@ -101,7 +101,7 @@
     },
     {
         "answer": "思い立ったが吉日",
-        "image": "image32.png",
+        "image": "image9.png",
         "candidates": [
             "私は人や物体、場所を認識することができませんが、画像から考えられる",
             "を5つ挙げることは可能です。",
@@ -123,7 +123,7 @@
     },
     {
         "answer": "嘘から出た実",
-        "image": "image35.png",
+        "image": "image10.png",
         "candidates": [
             "",
             "1:事実は勝る",
