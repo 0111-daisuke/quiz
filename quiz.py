@@ -1,6 +1,7 @@
 from openai import OpenAI
 import random
 import json
+import os
 
 client = OpenAI()
 file_path = "stock/stock.json"
@@ -19,7 +20,7 @@ def gest_api(messages):
     return client.chat.completions.create(
         model = "gpt-4-1106-preview",
         messages = messages,
-        temperature = 0.5,
+        temperature = 0.3,
         max_tokens = 300
         )
 
@@ -51,6 +52,33 @@ def theme():
 
     return answer, image, candidates, feature
 
+# logディレクトリにファイルを作成
+def make_log_file():
+    i = 1
+    while True:
+        filename = f"quizlog{i}.txt"
+        filepath = os.path.join('log', filename)
+        if not os.path.exists(filepath):
+            return filepath
+        i += 1
+
+# logディレクトリに作成したファイルに保存
+def save_to_log(log):
+    # ファイル作成
+    next_filename = make_log_file()
+
+    # txt形式にするために文章を''で囲む
+    log = ' '.join(log)
+    log = log.replace(" ", "")
+
+    # ファイルにテキストを書き込む
+    with open(next_filename, 'w', encoding='utf-8') as file:
+        file.write(log)
+
+    # 完了メッセージ
+    print(f"テキストは {next_filename} に保存されました。")
+
+# main文
 def main():
     # データの取得
     answer, image, candidates, feature = theme()
@@ -79,13 +107,15 @@ def main():
         {"role": "system", "content": "会話はmax_tokensの文字数以内にまとめてください。"}
         ]
     
-    # user_input変数を初期化
+    # 変数の初期化
     user_input = ""
+    log = ''
 
     # 最初の会話
     response1 = host_api(host_messages)
     res1 = response1.choices[0].message.content
-    print("host:"+res1)
+    print("host:" + res1)
+    log += 'host' + res1
     
     # userが会話する確率
     user_probability = 0.7
@@ -101,6 +131,7 @@ def main():
             if user_input.lower() == "exit":
                 break
             host_messages.append({"role": "user", "content": user_input})
+            log += '\nuser:' + user_input
             
         else:
             # gest
@@ -108,20 +139,24 @@ def main():
             response2 = gest_api(gest_messages)
             res2 = response2.choices[0].message.content
             host_messages.append({"role": "user", "content": res2})
-            print("gest:"+res2)
+            print("gest:" + res2)
+            log += '\ngest:' + res2
             
         # hostの返答
         response3 = host_api(host_messages)
         res3 = response3.choices[0].message.content
         host_messages.append({"role": "user", "content": res3})
-        print("host:"+res3)
+        print("host:" + res3)
+        log += '\nhost:' + res3
 
         # 正解したらhostの返答後終了
         if answer in user_input:
+            save_to_log(log)
             break
         
         # 会話を保存
         res1 = res3
 
+# 実行
 if __name__ == "__main__":
     main()
