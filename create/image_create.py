@@ -1,12 +1,13 @@
 from openai import OpenAI
 import requests
 import os
+import json
 
 client = OpenAI()
 
-candidated = input("ことわざを入力: ")
+answer = input("ことわざを入力: ")
 
-# 単語生成用API
+# 単語生成用の設定
 def word_create_api(messages):
     return client.chat.completions.create(
         model = "gpt-4-1106-preview",
@@ -15,12 +16,66 @@ def word_create_api(messages):
         max_tokens = 100
         )
 
+# 画像生成用の設定
+def generate_image_api(prompt):
+    return client.images.generate(
+        model = "dall-e-3",
+        prompt = prompt + "**出力する画像に文字は使用しないでください**",
+        size = "1024x1024",
+        quality = "standard",
+        n = 1,
+        )
+
+# 回答候補生成用の設定
+def generate_candidates_api(image):
+    return client.chat.completions.create(
+  model="gpt-4o",
+  messages=[
+    {
+      "role": "user",
+      "content": [
+        {"type": "text", "text": "この画像から考えられることわざを5つ挙げて下さい。"},
+        {"type": "text", "text": "挙げるときは ことわざ1、ことわざ2 のように並べて出力してください"},
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": image,
+          },
+        },
+      ],
+    }
+  ],
+  max_tokens=300,
+)
+
+# 画像の特徴生成用の設定
+def generate_features_api(image):
+    return client.chat.completions.create(
+  model="gpt-4o",
+  messages=[
+    {
+      "role": "user",
+      "content": [
+        {"type": "text", "text": "この画像の特徴を5つ挙げて下さい。"},
+        {"type": "text", "text": "挙げるときは 特徴1、特徴2 のように並べて出力してください"},
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": image,
+          },
+        },
+      ],
+    }
+  ],
+  max_tokens=300,
+)
+
 # 単語生成
 def generate_words(n):
     
     # hostのプロンプト
     words_create_messages = [
-        {"role": "system", "content": f"{candidated}から連想される単語のみを{n}個出してください"},
+        {"role": "system", "content": f"{answer}から連想される単語のみを{n}個出してください"},
         {"role": "system", "content": "出力する際はリンゴ、パイナップルのように並べて出力してください"}
         ]
     
@@ -31,18 +86,9 @@ def generate_words(n):
 
     return words_combined
 
-def generate_image_api(prompt):
-    return client.images.generate(
-        model = "dall-e-3",
-        prompt = prompt + "**出力する画像に文字は使用しないでください**",
-        size = "1024x1024",
-        quality = "standard",
-        n = 1,
-        )
-
 # 画像を生成する関数
 def generate_image(words):
-    prompt = f"ことわざ{candidated}をテーマにした画像を{words}の要素を含めて生成してください。"
+    prompt = f"ことわざ{answer}をテーマにした画像を{words}の要素を含めて生成してください。"
 
     response = generate_image_api(prompt)
     image_url = response.data[0].url
@@ -70,6 +116,75 @@ def get_next_filename(directory, base_name, extension):
             return filename
         i += 1
 
+# 回答候補の生成
+def generate_candidates(image):
+    response = generate_candidates_api(image)
+
+    candidates = response.choices[0].message.content
+    # candidates = candidates.split("、")
+    candidates = ' '.join(candidates)
+
+    return candidates
+
+
+# 特徴の生成
+def generate_features(image):
+    response = generate_features_api(image)
+
+    features = response.choices[0].message.content
+    # features = features.split("、")
+    features = ' '.join(features)
+
+    return features
+
+# データの収納
+def create_dataset(answer, image, candidates, features):
+    # 新しいデータのセット
+    new_data = {
+        "answer": answer,
+        "image": image,
+        "candidates": candidates,
+        "features": features
+    }
+    
+    # stockディレクトリのパス
+    stock_dir = '../stock'
+    
+    # stockディレクトリが存在しない場合は作成
+    if not os.path.exists(stock_dir):
+        os.makedirs(stock_dir)
+        
+    # stockディレクトリ内のstock.jsonファイルのパス
+    stock_json_path = os.path.join(stock_dir, 'stock.json')
+    
+    # stock.jsonファイルが存在するかチェック
+    if os.path.exists(stock_json_path):
+        # 既存のデータを読み込み
+        with open(stock_json_path, 'r', encoding='utf-8') as f:
+            existing_data = json.load(f)
+    else:
+        # ファイルが存在しない場合、新しいリストを作成
+        existing_data = []
+        
+    # 新しいデータのanswerを取得
+    new_answer = new_data['answer']
+    
+    # すでに同じanswerが存在するかチェック
+    answer_exists = any(item['answer'] == new_answer for item in existing_data)
+    
+    if not answer_exists:
+        # 新しいデータを追加
+        existing_data.append(new_data)
+        
+        # JSONファイルに保存
+        with open(stock_json_path, 'w', encoding='utf-8') as f:
+            json.dump(existing_data, f, ensure_ascii=False, indent=4)
+        
+        return print("データが保存されました。")
+    else:
+        return print("同じanswerを持つデータが既に存在します。追加しませんでした。")
+
+# main文
 def main():
 
     # 画像の生成
@@ -92,5 +207,17 @@ def main():
     # 画像を保存
     save_image(image, filename)
 
+    # 回答候補と特徴の生成
+    candidates = generate_candidates(image)
+    features = generate_features(image)
+
+    print(candidates, features)
+
+    # データをまとめて保存
+    filename = filename.replace(f"{directory}/", "")
+    create_dataset(answer, filename, candidates, features)
+
+
+# 実行
 if __name__ == "__main__":
     main()
