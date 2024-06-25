@@ -1,30 +1,59 @@
-import openai
+from openai import OpenAI
 import requests
 import os
 
-import base64
+client = OpenAI()
 
-# OpenAI APIキーを環境変数から取得
-openai.api_key = os.getenv("OPENAI_API_KEY")
+candidated = "弘法も筆の誤り"
 
-# 画像を生成して保存する関数
-def generate_and_save_image(prompt, filename):
-    client = openai.OpenAI()
+# 単語生成用API
+def word_create_api(messages):
+    return client.chat.completions.create(
+        model = "gpt-4-1106-preview",
+        messages = messages,
+        temperature = 0.5,
+        max_tokens = 100
+        )
 
-    # 画像生成のリクエスト
-    response = client.images.generate(
+# 単語生成
+def generate_words(n):
+    
+    # hostのプロンプト
+    words_create_messages = [
+        {"role": "system", "content": f"ことわざ{candidated}から連想される単語のみを{n}個出してください"},
+        {"role": "system", "content": "出力する際はリンゴ、パイナップルのように並べて出力してください"}
+        ]
+    
+    response = word_create_api(words_create_messages)
+    words_list = response.choices[0].message.content
+
+    words_combined = ' '.join(words_list)
+
+    return words_combined
+
+def generate_image_api(prompt):
+    return client.images.generate(
         model="dall-e-3",
-        prompt=prompt,
+        prompt=prompt + " without any text or letters.",
         size="1024x1024",
         quality="standard",
         n=1,
-    )
+        )
 
-    # 生成された画像のURLを取得
+# 画像を生成する関数
+def generate_image(words):
+    prompt = f"ことわざ{candidated}をテーマにした画像を{words}の要素を含めて生成してください。"
+
+    response = generate_image_api(prompt)
     image_url = response.data[0].url
 
+    return image_url
+
+# 画像を保存する関数
+def save_image(image, filename):
+
     # 画像データを取得
-    image_data = requests.get(image_url).content
+    image_data = requests.get(image).content
 
     # 画像ファイルとして保存
     with open(filename, "wb") as image_file:
@@ -41,23 +70,27 @@ def get_next_filename(directory, base_name, extension):
             return filename
         i += 1
 
-# 画像生成と保存の実行例
-prompt = "ことわざ「蛙の子は蛙」"
-directory = "stock"
-base_name = "image"
-extension = "png"
+def main():
 
-# ディレクトリが存在しない場合は作成
-if not os.path.exists(directory):
-    os.makedirs(directory)
+    # 画像の生成
+    words = generate_words(10)
+    print(words)
+    image = generate_image(words)
 
-# 次のファイル名を取得
-filename = get_next_filename(directory, base_name, extension)
+    # 画像生成と保存の実行例
+    directory = "../stock"
+    base_name = "image"
+    extension = "png"
+    
+    # ディレクトリが存在しない場合は作成
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        
+    # 次のファイル名を取得
+    filename = get_next_filename(directory, base_name, extension)
 
-# 画像を生成して保存
-generate_and_save_image(prompt, filename)
+    # 画像を保存
+    save_image(image, filename)
 
-# Function to encode the image
-def encode_image(image_path):
-  with open(image_path, "rb") as image_file:
-    return base64.b64encode(image_file.read()).decode('utf-8')
+if __name__ == "__main__":
+    main()
