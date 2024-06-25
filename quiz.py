@@ -76,10 +76,10 @@ def main():
         {"role": "system", "content": "会話はmax_tokensの文字数以内にまとめてください。"}
         ]
     
-    # user_input 変数を初期化
+    # user_input変数を初期化
     user_input = ""
 
-    # 1会話目
+    # 最初の会話
     response1 = host_api(host_messages)
     res1 = response1.choices[0].message.content
     print("host:"+res1)
