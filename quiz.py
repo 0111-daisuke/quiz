@@ -114,7 +114,7 @@ def main():
     # 最初の会話
     response1 = host_api(host_messages)
     res1 = response1.choices[0].message.content
-    print("host:" + res1)
+    print("host: " + res1)
     log += 'host' + res1
     
     # userが会話する確率
