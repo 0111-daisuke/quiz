@@ -55,6 +55,8 @@ def main():
     # データの取得
     answer, image, candidates, feature = theme()
 
+    print(image)
+
     # hostのプロンプト
     host_messages = [
         {"role": "system", "content": "あなたはhostとしてuserとgestが行っている画像を使用したクイズの司会をしてください。"},
@@ -68,6 +70,7 @@ def main():
     # gestのプロンプト
     gest_messages = [
         {"role": "system", "content": "あなたはgestとして画像を見て答えるクイズに答えてください。"},
+        {"role": "system", "content": "hostの文章に反応するようにしてください"},
         {"role": "system", "content": "回答の候補は以下に記します。これらの回答から根拠を交えてランダムに答えて下さい。"},
         {"role": "system", "content": candidates},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として進行してください。"},
