@@ -109,7 +109,7 @@ def main():
     
     # 変数の初期化
     user_input = ""
-    log = ''
+    log = f'{image}\n'
 
     # 最初の会話
     response1 = host_api(host_messages)
