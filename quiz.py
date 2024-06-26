@@ -16,7 +16,7 @@ def host_api(messages):
         )
 
 # 疑似パネリスト側の条件
-def gest_api(messages):
+def guest_api(messages):
     return client.chat.completions.create(
         model = "gpt-4-1106-preview",
         messages = messages,
@@ -87,7 +87,7 @@ def main():
 
     # hostのプロンプト
     host_messages = [
-        {"role": "system", "content": "あなたはhostとしてuserとgestが行っている画像を使用したクイズの司会をしてください。"},
+        {"role": "system", "content": "あなたはhostとしてuserとguestが行っている画像を使用したクイズの司会をしてください。"},
         {"role": "system", "content": f"このクイズの正解は{answer}にです。"},
         {"role": "system", "content": "クイズの正解はuserが当てるまで直接喋らないでください。"},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを参考にヒントを出しつつ進行してください。"},
@@ -95,9 +95,9 @@ def main():
         {"role": "system", "content": "会話はmax_tokensの文字数以内にまとめてください。"}
         ]
     
-    # gestのプロンプト
-    gest_messages = [
-        {"role": "system", "content": "あなたはgestとして画像を見て答えるクイズに答えてください。"},
+    # guestのプロンプト
+    guest_messages = [
+        {"role": "system", "content": "あなたはguestとして画像を見て答えるクイズに答えてください。"},
         {"role": "system", "content": "hostの文章に反応するようにしてください"},
         {"role": "system", "content": "回答の候補は以下に記します。これらの回答から根拠を交えてランダムに答えて下さい。"},
         {"role": "system", "content": candidates},
@@ -123,7 +123,7 @@ def main():
     # ここからループ
     while True:
 
-        # ランダムにuserかgestが会話
+        # ランダムにuserかguestが会話
         if random.choices([True, False], weights = [user_probability, 1 - user_probability])[0]:
             # user
             user_input = input("user: ")
@@ -134,13 +134,13 @@ def main():
             log += '\nuser:' + user_input
             
         else:
-            # gest
-            gest_messages.append({"role": "assistant", "content": res1})
-            response2 = gest_api(gest_messages)
+            # guest
+            guest_messages.append({"role": "assistant", "content": res1})
+            response2 = guest_api(guest_messages)
             res2 = response2.choices[0].message.content
             host_messages.append({"role": "user", "content": res2})
-            print("gest:" + res2)
-            log += '\ngest:' + res2
+            print("guest:" + res2)
+            log += '\nguest:' + res2
             
         # hostの返答
         response3 = host_api(host_messages)
