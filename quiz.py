@@ -12,7 +12,7 @@ def host_api(messages):
         model = "gpt-4-1106-preview",
         messages = messages,
         temperature = 1,
-        max_tokens = 300
+        max_tokens = 100
         )
 
 # 疑似パネリスト側の条件
@@ -21,7 +21,7 @@ def guest_api(messages):
         model = "gpt-4-1106-preview",
         messages = messages,
         temperature = 0.3,
-        max_tokens = 300
+        max_tokens = 50
         )
 
 # JSONファイルを読み込む関数
@@ -92,7 +92,7 @@ def main():
         {"role": "system", "content": "クイズの正解はuserが当てるまで直接喋らないでください。"},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを参考にヒントを出しつつ進行してください。"},
         {"role": "system", "content": feature},
-        {"role": "system", "content": "会話はmax_tokensの文字数以内にまとめてください。"}
+        {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
     
     # guestのプロンプト
@@ -104,7 +104,7 @@ def main():
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として進行してください。"},
         {"role": "system", "content": feature},
         {"role": "system", "content": "同じ回答の候補を使わないでください。"},
-        {"role": "system", "content": "会話はmax_tokensの文字数以内にまとめてください。"}
+        {"role": "system", "content": "会話は50文字以内にまとめてください。"}
         ]
     
     # 変数の初期化
