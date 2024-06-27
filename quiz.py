@@ -21,7 +21,7 @@ def guest_api(messages):
         model = "gpt-4-1106-preview",
         messages = messages,
         temperature = 0.3,
-        max_tokens = 50
+        max_tokens = 100
         )
 
 # JSONファイルを読み込む関数
@@ -104,21 +104,21 @@ def main():
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として進行してください。"},
         {"role": "system", "content": feature},
         {"role": "system", "content": "同じ回答の候補を使わないでください。"},
-        {"role": "system", "content": "会話は50文字以内にまとめてください。"}
+        {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
+    
+    # userが会話する確率
+    user_probability = 0.7
     
     # 変数の初期化
     user_input = ""
-    log = f'{image}\n'
+    log = f'img:{image},user_probability:{user_probability}\n'
 
     # 最初の会話
     response1 = host_api(host_messages)
     res1 = response1.choices[0].message.content
     print("host:" + res1)
     log += 'host:' + res1
-    
-    # userが会話する確率
-    user_probability = 0.7
 
     # ここからループ
     while True:
