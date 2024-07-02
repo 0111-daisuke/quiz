@@ -114,9 +114,10 @@ def main():
     user_input = ""
     log = f'img:{image},user_probability:{user_probability}\n'
 
-    # 最初の会話
-    response1 = host_api(host_messages)
-    res1 = response1.choices[0].message.content
+    # 最初の会話(定型文に変更)
+    # response1 = host_api(host_messages)
+    # res1 = response1.choices[0].message.content
+    res1 = "では問題です、この画像は何ということわざをテーマに生成されたでしょうか"
     print("host:" + res1)
     log += 'host:' + res1
 
