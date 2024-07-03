@@ -5,6 +5,9 @@ import os
 
 client = OpenAI()
 file_path = "stock/stock.json"
+green = "\033[32m"
+blue = "\033[34m"
+end = "\033[0m"
 
 # 司会側の条件
 def host_api(messages):
@@ -118,7 +121,7 @@ def main():
     # response1 = host_api(host_messages)
     # res1 = response1.choices[0].message.content
     res1 = "では問題です、この画像は何ということわざをテーマに生成されたでしょうか"
-    print("host:" + res1)
+    print(green + "host:" + end + res1)
     log += 'host:' + res1
 
     # ここからループ
@@ -140,15 +143,15 @@ def main():
             response2 = guest_api(guest_messages)
             res2 = response2.choices[0].message.content
             host_messages.append({"role": "user", "content": res2})
-            print("guest:" + res2)
-            log += '\nguest:' + res2
+            print(blue + "guest:" + end + res2)
+            log += "\nguest:" + res2
             
         # hostの返答
         response3 = host_api(host_messages)
         res3 = response3.choices[0].message.content
         host_messages.append({"role": "user", "content": res3})
-        print("host:" + res3)
-        log += '\nhost:' + res3
+        print(green + "host:" + end + res3)
+        log += "\nhost:" + res3
 
         # 正解したらhostの返答後終了
         if answer in user_input:
