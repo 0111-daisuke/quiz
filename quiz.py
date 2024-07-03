@@ -115,7 +115,7 @@ def main():
     
     # 変数の初期化
     user_input = ""
-    log = f'img:{image},user_probability:{user_probability}\n'
+    log = f'img:{image}, user_probability:{user_probability}\n'
 
     # 最初の会話(定型文に変更)
     # response1 = host_api(host_messages)
