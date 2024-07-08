@@ -20,7 +20,7 @@ def word_create_api(messages):
 def generate_image_api(prompt):
     return client.images.generate(
         model = "dall-e-3",
-        prompt = prompt + "**出力する画像に文字は使用しないでください**",
+        prompt = prompt,
         size = "1024x1024",
         quality = "standard",
         n = 1,
@@ -88,7 +88,7 @@ def generate_words(n):
 
 # 画像を生成する関数
 def generate_image(words):
-    prompt = f"ことわざ{answer}をテーマにした画像を{words}の要素を含めて生成してください。"
+    prompt = f"ことわざ{answer}をテーマにした画像を{words}の要素を含めて生成してください。**出力する画像に文字は使用しないでください**"
 
     response = generate_image_api(prompt)
     image_url = response.data[0].url
