@@ -1,19 +1,32 @@
 比較内容
 　featuresの有無による文章精度
+  guestの有無による会話らしさ
 
 評価内容
 　会話の成り立ち具合
 　正解の内容が画像に沿っているか
-　疑似パネリストの発話回数は適切か
+　guestの発話回数は適切か
 　ヒントが適切か
-  司会の発話の長さは適当か
-  疑似パネリストの発話の長さは適当か
+  hostの発話の長さは適当か
+  guestの発話の長さは適当か
 
 課題
   guestが同じことわざにしか触れない
-  →与えることわざを一つづつにすると解決できる？
+  →与えることわざを一つずつにすると解決できる？
 　画像の出力
 　会話内容の保存
+
+  複数のguestの追加(guest同士が話し合うシステム)
+  →hostが会話する間にguest同士が確率で割り込んで会話する
+  →例1:host→guest1→guest2→guest1→host→user→host
+   guest同士が会話するパターン
+  →例2:host→user→guest1→guest2→host→user→host
+   guest同士の会話にhostが割り込むパターン
+  →guest同士の会話はあるためguest→guest→guestはあるがuserは一人なためuser→userは無し
+  →guest→user→guest2→user
+   userとguestが会話するパターン
+
+  guest2として別にプロンプトを用意する
 
 修正候補
   hostの1会話目を定型文にする
