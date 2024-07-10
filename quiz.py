@@ -104,9 +104,9 @@ def main():
         {"role": "system", "content": "hostの文章に反応するようにしてください"},
         {"role": "system", "content": "回答の候補は以下に記します。これらの回答から根拠を交えてランダムに答えて下さい。"},
         {"role": "system", "content": candidates},
+        {"role": "system", "content": "同じ回答の候補を使わないでください。"},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として進行してください。"},
         {"role": "system", "content": feature},
-        {"role": "system", "content": "同じ回答の候補を使わないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
     
@@ -136,7 +136,7 @@ def main():
                 break
             host_messages.append({"role": "user", "content": user_input})
             log += '\nuser:' + user_input
-            
+
         else:
             # guest
             guest_messages.append({"role": "assistant", "content": res1})
