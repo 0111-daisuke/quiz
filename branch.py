@@ -7,7 +7,7 @@ def branch_api(messages):
         model = "gpt-4o",
         messages = messages,
         temperature = 1,
-        max_tokens = 5
+        max_tokens = 1
         )
 
 def branch(word):
