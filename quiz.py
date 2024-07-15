@@ -9,7 +9,7 @@ green = "\033[32m"
 blue = "\033[34m"
 end = "\033[0m"
 
-# 司会側の条件
+# hostのAPI
 def host_api(messages):
     return client.chat.completions.create(
         model = "gpt-4-1106-preview",
@@ -18,7 +18,7 @@ def host_api(messages):
         max_tokens = 100
         )
 
-# 疑似パネリスト側の条件
+# guestのAPI
 def guest_api(messages):
     return client.chat.completions.create(
         model = "gpt-4-1106-preview",
@@ -26,6 +26,27 @@ def guest_api(messages):
         temperature = 0.3,
         max_tokens = 100
         )
+
+# 分岐システムのAPI
+def branch_api(messages):
+    return client.chat.completions.create(
+        model = "gpt-4o",
+        messages = messages,
+        temperature = 1,
+        max_tokens = 1
+        )
+
+# 分岐システム
+def branch(word, talk):
+
+    branch_messages = [
+        {"role": "system", "content": f"次の文に{word}が含まれていた場合0を、含まれていない場合1を返してください。"}
+        ]
+    
+    branch_messages.append({"role": "user", "content": talk})
+    branch_response = branch_api(branch_messages)
+    res = branch_response.choices[0].message.content
+    return int(res)
 
 # JSONファイルを読み込む関数
 def read_json(file_path):
@@ -117,9 +138,6 @@ def main():
     user_input = ""
     log = f'img:{image}, user_probability:{user_probability}\n'
 
-    # 最初の会話(定型文に変更)
-    # response1 = host_api(host_messages)
-    # res1 = response1.choices[0].message.content
     res1 = "では問題です、この画像は何ということわざをテーマに生成されたでしょうか"
     print(green + "host:" + end + res1)
     log += 'host:' + res1
