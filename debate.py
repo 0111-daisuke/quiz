@@ -9,7 +9,7 @@ def host_api(messages):
         model="gpt-4-1106-preview",
         messages=messages,
         temperature=1.0,
-        max_tokens=100
+        max_tokens=30
         )
 
 # gest
@@ -18,8 +18,28 @@ def gest_api(messages):
         model="gpt-4-1106-preview",
         messages=messages,
         temperature=0.5,
-        max_tokens=100
+        max_tokens=30
         )
+
+# branch
+def branch_api(messages):
+    return client.chat.completions.create(
+        model = "gpt-4o",
+        messages = messages,
+        temperature = 1.0,
+        max_tokens = 1
+        )
+
+def branch(word, talk):
+
+    branch_messages = [
+        {"role": "system", "content": f"次の文に{word}が含まれていた場合0を、含まれていない場合1を返してください。"}
+        ]
+    
+    branch_messages.append({"role": "user", "content": talk})
+    branch_response = branch_api(branch_messages)
+    res = branch_response.choices[0].message.content
+    return res
 
 # main文
 def main():
@@ -46,8 +66,18 @@ def main():
     
     # 確率
     user_probability = 0.5
+    
+    talk = ""
 
     while True:
+        word = "天気"
+        n = int(branch(word, talk))
+        print(type(n))
+
+        if n == 0:
+            print("end")
+            break
+
         # exitと打てば終了
         if user_input.lower() == "exit":
             break
@@ -76,6 +106,7 @@ def main():
         
         # 1ループ目の会話を保存
         res1 = res3
+        talk = res3
 
 if __name__ == "__main__":
     main()
