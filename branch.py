@@ -21,11 +21,11 @@ def branch(word):
     branch_response = branch_api(branch_messages)
     res = branch_response.choices[0].message.content
 
-    print(res)
+    return int(res)
 
 def main():
     word = "ことわざ"
-    branch(word)
+    print(branch(word))
 
 # 実行
 if __name__ == "__main__":
