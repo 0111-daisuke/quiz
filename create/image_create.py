@@ -23,7 +23,7 @@ def generate_image_api(prompt):
         prompt = prompt,
         size = "1024x1024",
         quality = "standard",
-        n = 1,
+        n = 1
         )
 
 # 回答候補生成用の設定
@@ -88,7 +88,7 @@ def generate_words(n):
 
 # 画像を生成する関数
 def generate_image(words):
-    prompt = f"ことわざ{answer}をテーマにした画像を{words}の要素を含めて生成してください。**出力する画像に文字は使用しないでください**"
+    prompt = f"ことわざ{answer}をテーマにした画像を{words}の要素を含めて生成してください。\n画像には文字を含めないでください。"
 
     response = generate_image_api(prompt)
     image_url = response.data[0].url
