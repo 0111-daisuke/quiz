@@ -134,6 +134,7 @@ def main():
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
     
+    # guestがhostと対話する時のプロンプト
     guest_reply = [
         {"role": "system", "content": "あなたはguestとして画像を見て答えるクイズに答えてください。"},
         {"role": "system", "content": "友達口調でuserの文章に反応するようにしてください"},
