@@ -158,7 +158,7 @@ def main():
     
     log = f'img:{image}, user_probability:{user_probability}\n'
 
-    res1 = "では問題です、この画像は何ということわざをテーマに生成されたでしょうか"
+    res1 = "では問題です、この画像は何ということわざをテーマに生成されたでしょう"
     print(green + "host:" + color_end + res1)
     log += 'host:' + res1
 
@@ -178,7 +178,7 @@ def main():
         log += "\nguest:" + res2
         put = res2
 
-    # ことわざの有無を判定
+    # hostが発話するかの判定
     n = branch(words, put)
 
     # ループ
@@ -186,7 +186,7 @@ def main():
     
         # 会話にwordsに関する文章が含まれていたらhostが判定
         if  n == 0:
-            # hostの返答
+            # host
             host_messages.append({"role": "user", "content": put})
             response3 = host_api(host_messages)
             res3 = response3.choices[0].message.content
@@ -242,7 +242,7 @@ def main():
                 log += '\nuser:' + user_input
                 put = user_input
                 
-            # ことわざの有無を判定
+            # hostが発話するかの判定
             n = branch(words, put)
 
 # 実行
