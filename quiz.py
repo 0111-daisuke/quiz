@@ -113,6 +113,7 @@ def main():
     host_messages = [
         {"role": "system", "content": "あなたはhostとしてuserとguestが行っている画像を使用したクイズの司会をしてください。"},
         {"role": "system", "content": f"このクイズの正解は{answer}にです。"},
+        {"role": "system", "content": "友達口調でuserの文章に反応するようにしてください"},
         {"role": "system", "content": "クイズの正解はuserが当てるまで直接喋らないでください。"},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを参考にヒントを出しつつ進行してください。"},
         {"role": "system", "content": feature},
@@ -175,11 +176,11 @@ def main():
         log += "\nguest:" + res2
         put = res2
 
-    # ことわざの有無を確認
-    n = branch(words, put)
-
     # ループ
     while True:
+        # ことわざの有無を判定
+        n = branch(words, put)
+    
         # 会話にことわざが含まれていたらhostが判定
         if  n == 0:
             # hostの返答
@@ -215,9 +216,6 @@ def main():
                 print(blue + "guest:" + color_end + res2)
                 log += "\nguest:" + res2
                 put = res2
-            
-            # ことわざの有無を判定
-            n = branch(words, put)
 
         elif n == 1:
             # 前の会話がuserだったらguestが発話
@@ -240,9 +238,6 @@ def main():
                 guest_messages.append({"role": "user", "content": user_input})
                 log += '\nuser:' + user_input
                 put = user_input
-                
-            # ことわざの有無を判定
-            n = branch(words, put)
 
 # 実行
 if __name__ == "__main__":
