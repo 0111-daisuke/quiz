@@ -156,7 +156,7 @@ def main():
         "hostという言葉が含まれている文章"
         ]
     
-    guset_words = [
+    guest_words = [
         "guestという言葉が含まれている文章"
         ]
 
