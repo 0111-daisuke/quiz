@@ -42,7 +42,7 @@ def branch(words, talk):
     branch_messages = [
         {"role": "system", "content": f"次の文に{words}が含まれていた場合0を、含まれていない場合1を返してください。"}
         ]
-    
+
     branch_messages.append({"role": "user", "content": talk})
     branch_response = branch_api(branch_messages)
     res = branch_response.choices[0].message.content
@@ -63,7 +63,7 @@ def get_random_data():
 # テーマの取得
 def theme():
     random_data = get_random_data()
-    
+
     # 各ステータスを変数に格納
     answer = random_data["answer"]
     image = random_data["image"]
@@ -120,7 +120,7 @@ def main():
         {"role": "system", "content": "画像を直接見れないことに触れないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
-    
+
     # guestのプロンプト
     guest_messages = [
         {"role": "system", "content": "あなたはguestとして画像を見て答えるクイズに答えてください。"},
@@ -133,7 +133,7 @@ def main():
         {"role": "system", "content": "画像を直接見れないことに触れないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
-    
+
     # guestがhostと対話する時のプロンプト
     guest_reply = [
         {"role": "system", "content": "あなたはguestとして画像を見て答えるクイズに答えてください。"},
@@ -143,10 +143,10 @@ def main():
         {"role": "system", "content": "画像を直接見れないことに触れないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
-    
+
     # userが会話する確率
     user_probability = 0.7
-    
+
     # 変数の初期化
     user_input = ""
     words = [
@@ -155,7 +155,7 @@ def main():
         "ヒントを求める文章",
         "hostという言葉が含まれている文章"
         ]
-    
+
     log = f'img:{image}, user_probability:{user_probability}\n'
 
     res1 = "では問題です、この画像は何ということわざをテーマに生成されたでしょう"
@@ -183,7 +183,7 @@ def main():
 
     # ループ
     while True:
-    
+
         # 会話にwordsに関する文章が含まれていたらhostが判定
         if  n == 0:
             # host
@@ -230,7 +230,7 @@ def main():
                 print(blue + "guest:" + color_end + res2)
                 log += "\nguest:" + res2
                 put = res2
-                
+
             # 前の発話がguestだったらuserが発話
             elif put == res2:
                 # user
@@ -241,7 +241,7 @@ def main():
                 guest_messages.append({"role": "user", "content": user_input})
                 log += '\nuser:' + user_input
                 put = user_input
-                
+
             # hostが発話するかの判定
             n = branch(words, put)
 
