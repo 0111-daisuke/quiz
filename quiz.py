@@ -37,10 +37,10 @@ def branch_api(messages):
         )
 
 # 分岐システム
-def branch(words, talk):
+def branch(host_words, talk):
 
     branch_messages = [
-        {"role": "system", "content": f"次の文に{words}が含まれていた場合0を、含まれていない場合1を返してください。"}
+        {"role": "system", "content": f"次の文に{host_words}が含まれていた場合0を、含まれていない場合1を返してください。"}
         ]
 
     branch_messages.append({"role": "user", "content": talk})
@@ -149,11 +149,15 @@ def main():
 
     # 変数の初期化
     user_input = ""
-    words = [
+    host_words = [
         "ことわざ",
         "四字熟語",
         "ヒントを求める文章",
         "hostという言葉が含まれている文章"
+        ]
+    
+    guset_words = [
+        "guestという言葉が含まれている文章"
         ]
 
     log = f'img:{image}, user_probability:{user_probability}\n'
@@ -179,12 +183,12 @@ def main():
         put = res2
 
     # hostが発話するかの判定
-    n = branch(words, put)
+    n = branch(host_words, put)
 
     # ループ
     while True:
 
-        # 会話にwordsに関する文章が含まれていたらhostが判定
+        # 会話にhost_wordsに関する文章が含まれていたらhostが判定
         if  n == 0:
             # host
             host_messages.append({"role": "user", "content": put})
@@ -243,7 +247,7 @@ def main():
                 put = user_input
 
             # hostが発話するかの判定
-            n = branch(words, put)
+            n = branch(host_words, put)
 
 # 実行
 if __name__ == "__main__":
