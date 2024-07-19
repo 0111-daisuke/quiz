@@ -12,7 +12,7 @@ color_end = "\033[0m"
 # hostのAPI
 def host_api(messages):
     return client.chat.completions.create(
-        model = "gpt-4-1106-preview",
+        model = "gpt-4-turbo",
         messages = messages,
         temperature = 1,
         max_tokens = 100
@@ -21,7 +21,7 @@ def host_api(messages):
 # guestのAPI
 def guest_api(messages):
     return client.chat.completions.create(
-        model = "gpt-4-1106-preview",
+        model = "gpt-4-turbo",
         messages = messages,
         temperature = 0.3,
         max_tokens = 100
@@ -149,6 +149,8 @@ def main():
 
     # 変数の初期化
     user_input = ""
+
+    # hostを呼び出すためのワード
     host_words = [
         "ことわざ",
         "四字熟語",
@@ -156,6 +158,7 @@ def main():
         "hostという言葉が含まれている文章"
         ]
     
+    # guestを呼び出すためのワード
     guest_words = [
         "guestという言葉が含まれている文章"
         ]
