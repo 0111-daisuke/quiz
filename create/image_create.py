@@ -10,7 +10,7 @@ answer = input("ことわざを入力: ")
 # 単語生成用の設定
 def word_create_api(messages):
     return client.chat.completions.create(
-        model = "gpt-4-1106-preview",
+        model = "gpt-4o",
         messages = messages,
         temperature = 0.5,
         max_tokens = 100
