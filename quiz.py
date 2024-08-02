@@ -12,7 +12,7 @@ color_end = "\033[0m"
 # hostのAPI
 def host_api(messages):
     return client.chat.completions.create(
-        model = "gpt-4-turbo",
+        model = "gpt-4o",
         messages = messages,
         temperature = 1,
         max_tokens = 100
@@ -21,7 +21,7 @@ def host_api(messages):
 # guestのAPI
 def guest_api(messages):
     return client.chat.completions.create(
-        model = "gpt-4-turbo",
+        model = "gpt-4o",
         messages = messages,
         temperature = 0.3,
         max_tokens = 100
