@@ -57,7 +57,7 @@ def read_json(file_path):
 # ランダムなデータを取得する関数
 def get_random_data():
     data = read_json(file_path)
-    return data[6]
+    return data[28]
 
 # テーマの取得
 def theme():
