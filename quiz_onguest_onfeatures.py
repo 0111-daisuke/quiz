@@ -57,7 +57,7 @@ def read_json(file_path):
 # ランダムなデータを取得する関数
 def get_random_data():
     data = read_json(file_path)
-    return data[13]
+    return data[6]
 
 # テーマの取得
 def theme():
@@ -79,7 +79,7 @@ def theme():
 def make_log_file():
     i = 1
     while True:
-        filename = f"quizlog_onguest_offfeatures{i}.txt"
+        filename = f"quizlog_onguest_onfetures{i}.txt"
         filepath = os.path.join('log', filename)
         if not os.path.exists(filepath):
             return filepath
@@ -114,6 +114,8 @@ def main():
         {"role": "system", "content": f"このクイズの正解は{answer}にです。"},
         {"role": "system", "content": "友達口調でuserの文章に反応するようにしてください"},
         {"role": "system", "content": "クイズの正解はuserが当てるまで直接喋らないでください。"},
+        {"role": "system", "content": "画像の特徴は以下のようになっています。これらを参考にヒントを出しつつ進行してください。"},
+        {"role": "system", "content": feature},
         {"role": "system", "content": "画像を直接見れないことに触れないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
@@ -125,6 +127,8 @@ def main():
         {"role": "system", "content": "回答の候補は以下に記します。他の参加者と話をしつつこれらの回答から根拠を交えてランダムに答えて下さい。"},
         {"role": "system", "content": candidates},
         {"role": "system", "content": "同じ回答の候補を使わないでください。"},
+        {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として活用してください。"},
+        {"role": "system", "content": feature},
         {"role": "system", "content": "画像を直接見れないことに触れないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
@@ -132,7 +136,9 @@ def main():
     # guestがhostと対話する時のプロンプト
     guest_reply = [
         {"role": "system", "content": "あなたはguestとして画像を見て答えるクイズに答えてください。"},
-        {"role": "system", "content": "友達口調でhostの文章と会話するようにしてください"},
+        {"role": "system", "content": "友達口調で文章に反応するようにしてください"},
+        {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として活用してください。"},
+        {"role": "system", "content": feature},
         {"role": "system", "content": "画像を直接見れないことに触れないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]

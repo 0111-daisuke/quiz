@@ -12,7 +12,7 @@ color_end = "\033[0m"
 # hostのAPI
 def host_api(messages):
     return client.chat.completions.create(
-        model = "gpt-4-turbo",
+        model = "gpt-4o",
         messages = messages,
         temperature = 1,
         max_tokens = 100
@@ -28,7 +28,7 @@ def read_json(file_path):
 def get_random_data():
     data = read_json(file_path)
     random_index = random.randint(0, len(data) - 1)
-    return data[random_index]
+    return data[24]
 
 # テーマの取得
 def theme():
@@ -50,7 +50,7 @@ def theme():
 def make_log_file():
     i = 1
     while True:
-        filename = f"offguest_offfeatures_quizlog{i}.txt"
+        filename = f"quizlog_offguest_offfeatures{i}.txt"
         filepath = os.path.join('log', filename)
         if not os.path.exists(filepath):
             return filepath
