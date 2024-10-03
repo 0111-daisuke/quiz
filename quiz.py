@@ -112,7 +112,7 @@ def main():
     # hostのプロンプト
     host_messages = [
         {"role": "system", "content": "あなたはhostとしてuserとguestが行っている画像を使用したクイズの司会をしてください。"},
-        {"role": "system", "content": f"このクイズの正解は{answer}にです。"},
+        {"role": "system", "content": f"このクイズの正解は{answer}です。"},
         {"role": "system", "content": "友達口調でuserの文章に反応するようにしてください"},
         {"role": "system", "content": "クイズの正解はuserが当てるまで直接喋らないでください。"},
         {"role": "system", "content": "画像の特徴は以下のようになっています。これらを参考にヒントを出しつつ進行してください。"},
@@ -123,24 +123,21 @@ def main():
 
     # guestのプロンプト
     guest_messages = [
-        {"role": "system", "content": "あなたはguestとして画像を見て答えるクイズに答えてください。"},
+        {"role": "system", "content": "あなたはguestとして下記の特徴からどのことわざが適切か答えるクイズに答えてください。"},
+        {"role": "system", "content": feature},
         {"role": "system", "content": "友達口調でuserの文章に反応するようにしてください"},
-        {"role": "system", "content": "回答の候補は以下に記します。他の参加者と話をしつつこれらの回答から根拠を交えてランダムに答えて下さい。"},
+        {"role": "system", "content": "回答の候補は以下に記します。他の参加者と話をしつつ回答の候補から根拠を交えてランダムに答えて下さい。"},
         {"role": "system", "content": candidates},
         {"role": "system", "content": "同じ回答の候補を使わないでください。"},
-        {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として活用してください。"},
-        {"role": "system", "content": feature},
-        {"role": "system", "content": "画像を直接見れないことに触れないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
 
     # guestがhostと対話する時のプロンプト
     guest_reply = [
-        {"role": "system", "content": "あなたはguestとして画像を見て答えるクイズに答えてください。"},
+        {"role": "system", "content": "あなたはguestとしてクイズに答えてください。"},
         {"role": "system", "content": "友達口調でhostの文章に反応するようにしてください"},
-        {"role": "system", "content": "画像の特徴は以下のようになっています。これらを根拠として活用してください。"},
+        {"role": "system", "content": "特徴は以下のようになっています。これらを根拠として活用してください。"},
         {"role": "system", "content": feature},
-        {"role": "system", "content": "画像を直接見れないことに触れないでください。"},
         {"role": "system", "content": "会話は100文字以内にまとめてください。"}
         ]
 
