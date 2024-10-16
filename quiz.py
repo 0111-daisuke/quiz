@@ -114,11 +114,11 @@ def main():
     host_messages = [
             {"role": "system", 
               "content": "あなたはhostとしてuserとguestが行っている画像を使用したクイズの司会をしてください。"
-              f"このクイズの正解は{answer}です。友達口調でuserの文章に反応するようにしてください。"
-              "クイズの正解はuserが当てるまで直接喋らないでください。"
-              "画像の特徴は以下のようになっています。これらを参考にヒントを出しつつ進行してください。"
-              f"{feature}画像を直接見れないことに触れないでください。"
-              "会話は100文字以内にまとめてください。"
+                         f"このクイズの正解は{answer}です。友達口調でuserの文章に反応するようにしてください。"
+                         "クイズの正解はuserが当てるまで直接喋らないでください。"
+                         f"画像の特徴は以下のようになっています。{feature}これらを参考にヒントを出しつつ進行してください。"
+                         "画像を直接見れないことに触れないでください。"
+                         "会話は100文字以内にまとめてください。"
             }
         ]
 
@@ -126,18 +126,20 @@ def main():
     guest_messages = [
         {"role": "system",
          "content": f"あなたはguestとしてこの特徴{feature}からどのことわざが適切か答えるクイズに答えてください。"
-                     "友達口調でuserの文章に反応するようにしてください。"
-                    f"回答の候補は以下に記します。{candidates}他の参加者と話をしつつ回答の候補から根拠を交えてランダムに答えて下さい。"
+                    "友達口調で文章に反応するようにしてください。"
+                    f"回答の候補は以下に記します。{candidates}"
+                    "他の参加者と話をしつつ回答の候補から根拠を交えてランダムに答えて下さい。"
                     "同じ回答の候補を使わないでください。"
                     "会話は100文字以内にまとめてください。"
-                    }
+        }
     ]
 
     # guestがhostと対話する時のプロンプト
     guest_reply = [
         {"role": "system",
          "content": "あなたはguestとして最後の文章に続くように文章を返してください。"
-                    f"この特徴{feature}を用いて友達口調で文章に応答するようにしてください。"
+                    "友達口調で文章に応答するようにしてください。"
+                    "**文章にはことわざを使用しないでください。**"
                     "会話は100文字以内にまとめてください。"
         }
     ]
@@ -168,9 +170,9 @@ def main():
     log += 'host:' + res1
 
     # プロンプトに文章を追加
-    host_messages.append({"role": "system", "content": res1})
-    guest_messages.append({"role": "assistant", "content": res1})
-    guest_reply.append({"role": "assistant", "content": res1})
+    host_messages.append({"role": "assistant", "content": res1})
+    guest_messages.append({"role": "user", "content": res1})
+    guest_reply.append({"role": "user", "content": res1})
 
     # ランダムにuserかguestが会話
     if random.choices([True, False], weights = [user_probability, 1 - user_probability])[0]:
@@ -191,9 +193,9 @@ def main():
         log += "\nguest:" + res2
         put = res2
         # プロンプトに文章を追加
-        host_messages.append({"role": "assistant", "content": put})
-        guest_messages.append({"role": "system", "content": put})
-        guest_reply.append({"role": "system", "content": put})
+        host_messages.append({"role": "user", "content": put})
+        guest_messages.append({"role": "assistant", "content": put})
+        guest_reply.append({"role": "assistant", "content": put})
 
     # hostが発話するかの判定
     n = branch(host_words, put)
@@ -212,9 +214,9 @@ def main():
             # 会話を保存
             res1 = res3
             # プロンプトに文章を追加
-            host_messages.append({"role": "system", "content": res1})
-            guest_messages.append({"role": "assistant", "content": res1})
-            guest_reply.append({"role": "assistant", "content": res1})
+            host_messages.append({"role": "assistant", "content": res1})
+            guest_messages.append({"role": "user", "content": res1})
+            guest_reply.append({"role": "user", "content": res1})
 
             # 正解したらhostの返答後終了
             if answer in user_input:
@@ -242,9 +244,9 @@ def main():
                 log += "\nguest:" + res2
                 put = res2
                 # プロンプトに文章を追加
-                host_messages.append({"role": "assistant", "content": put})
-                guest_messages.append({"role": "system", "content": put})
-                guest_reply.append({"role": "system", "content": put})
+                host_messages.append({"role": "user", "content": put})
+                guest_messages.append({"role": "assistant", "content": put})
+                guest_reply.append({"role": "assistant", "content": put})
 
         elif n == 1:
             # 前の会話がuserだったらguestが発話
@@ -256,9 +258,9 @@ def main():
                 log += "\nguest:" + res2
                 put = res2
                 # プロンプトに文章を追加
-                host_messages.append({"role": "assistant", "content": put})
-                guest_messages.append({"role": "system", "content": put})
-                guest_reply.append({"role": "system", "content": put})
+                host_messages.append({"role": "user", "content": put})
+                guest_messages.append({"role": "assistant", "content": put})
+                guest_reply.append({"role": "assistant", "content": put})
 
             # 前の発話がguestだったらuserが発話
             elif put == res2:
