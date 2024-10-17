@@ -161,7 +161,7 @@ def main():
         guest_reply.append({"role": user2, "content": res})
 
     # userが会話する確率
-    user_probability = 0
+    user_probability = 0.7
 
     # 変数の初期化
     user_input = ""
