@@ -158,6 +158,7 @@ def main():
         }
     ]
 
+    # プロンプトに文章を追加する関数
     def append_message(user1, user2, res):
         host_messages.append({"role": user1, "content": res})
         guest_messages.append({"role": user2, "content": res})
@@ -184,8 +185,10 @@ def main():
         "guestという言葉が含まれている文章"
         ]
 
+    # 初期情報の保存
     log = f'img:{image}, user_probability:{user_probability}\n'
 
+    # 1文目
     res1 = "では問題です、この画像は何ということわざをテーマに生成されたでしょう"
     print(green + "host:" + color_end + res1)
     log += 'host:' + res1
