@@ -23,7 +23,7 @@ def guest_api(messages):
     return client.chat.completions.create(
         model = "gpt-4o",
         messages = messages,
-        temperature = 0.3,
+        temperature = 1,
         max_tokens = 100
         )
 
@@ -32,7 +32,7 @@ def branch_api(messages):
     return client.chat.completions.create(
         model = "gpt-4o",
         messages = messages,
-        temperature = 1,
+        temperature = 0,
         max_tokens = 1
         )
 
@@ -41,7 +41,10 @@ def branch(host_words, talk):
 
     branch_messages = [
         {"role": "system", 
-         "content": f"次の文に{host_words}が含まれていた場合0を、含まれていない場合1を返してください。"}
+         "content": f"""
+                    次の文に{host_words}が含まれているかどうかを判断して0~100の数値を返してください
+                    含まれていないと判断した場合0に近く、含まれていると判断した場合100に近いです
+                    """}
         ]
 
     branch_messages.append({"role": "user", "content": talk})
@@ -113,49 +116,64 @@ def main():
     # hostのプロンプト
     host_messages = [
             {"role": "system", 
-              "content": "あなたはhostとしてuserとguestが行っている画像を使用したクイズの司会をしてください。"
-                         f"このクイズの正解は{answer}です。友達口調でuserの文章に反応するようにしてください。"
-                         "クイズの正解はuserが当てるまで直接喋らないでください。"
-                         f"画像の特徴は以下のようになっています。{feature}これらを参考にヒントを出しつつ進行してください。"
-                         "画像を直接見れないことに触れないでください。"
-                         "会話は100文字以内にまとめてください。"
+              "content": f"""
+                         あなたはhostとしてuserとguestが行っている画像を使用したクイズの司会をしてください。
+                         このクイズの正解は{answer}です。友達口調でuserの文章に反応するようにしてください。
+                         クイズの正解はuserが当てるまで直接喋らないでください。
+                         画像の特徴は以下のようになっています。{feature}これらを参考にヒントを出しつつ進行してください。
+                         画像を直接見れないことに触れないでください。
+                         会話は100文字以内にまとめてください。
+                         """
             }
         ]
 
     # guestのプロンプト
     guest_messages = [
         {"role": "system",
-         "content": f"あなたはguestとしてこの特徴{feature}からどのことわざが適切か答えるクイズに答えてください。"
-                    "友達口調で文章に反応するようにしてください。"
-                    f"回答の候補は以下に記します。{candidates}"
-                    "他の参加者と話をしつつ回答の候補から根拠を交えてランダムに答えて下さい。"
-                    "同じ回答の候補を使わないでください。"
-                    "会話は100文字以内にまとめてください。"
+         "content": f"""
+                    あなたはguestとしてこの特徴{feature}からどのことわざが適切か答えるクイズに答えてください。
+                    友達口調で文章に反応するようにしてください。
+                    回答の候補は以下に記します。{candidates}
+                    他の参加者と話をしつつ回答の候補から根拠を交えてランダムに答えて下さい。
+                    同じ回答の候補を使わないでください。
+                    会話は100文字以内にまとめてください。
+                    """
         }
     ]
 
     # guestがhostと対話する時のプロンプト
     guest_reply = [
         {"role": "system",
-         "content": "あなたはguestとして最後の文章に続くように文章を返してください。"
-                    "友達口調で文章に応答するようにしてください。"
-                    "**文章にはことわざを使用しないでください。**"
-                    "会話は100文字以内にまとめてください。"
+         "content": f"""
+                    あなたは以下のルールに基づいて文章を返すguestです。
+                    ルール1, 文章に[ことわざ]と[{candidates}]を**絶対に使用しない**。
+                    ルール2, {feature}を用いて会話する。
+                    ルール3, 問題に回答しない。
+                    ルール4, 会話は100文字以内。
+                    ルール5, 友達口調
+                    """
         }
     ]
 
+    def append_message(user1, user2, res):
+        host_messages.append({"role": user1, "content": res})
+        guest_messages.append({"role": user2, "content": res})
+        guest_reply.append({"role": user2, "content": res})
+
     # userが会話する確率
-    user_probability = 0.7
+    user_probability = 0
 
     # 変数の初期化
     user_input = ""
 
     # hostを呼び出すためのワード
     host_words = [
-        "ことわざ",
-        "四字熟語",
-        "ヒントを求める文章",
-        "hostという言葉が含まれている文章"
+        """
+        ことわざ,
+        四字熟語,
+        ヒントを求める文章,
+        hostという言葉が含まれている文章
+        """
         ]
 
     # guestを呼び出すためのワード
@@ -170,9 +188,7 @@ def main():
     log += 'host:' + res1
 
     # プロンプトに文章を追加
-    host_messages.append({"role": "assistant", "content": res1})
-    guest_messages.append({"role": "user", "content": res1})
-    guest_reply.append({"role": "user", "content": res1})
+    append_message("assistant", "user", res1)
 
     # ランダムにuserかguestが会話
     if random.choices([True, False], weights = [user_probability, 1 - user_probability])[0]:
@@ -181,9 +197,7 @@ def main():
         log += '\nuser:' + user_input
         put = user_input
         # プロンプトに文章を追加
-        host_messages.append({"role": "user", "content": put})
-        guest_messages.append({"role": "user", "content": put})
-        guest_reply.append({"role": "user", "content": put})
+        append_message("user", "user", put)
 
     else:
         # guest
@@ -193,30 +207,26 @@ def main():
         log += "\nguest:" + res2
         put = res2
         # プロンプトに文章を追加
-        host_messages.append({"role": "user", "content": put})
-        guest_messages.append({"role": "assistant", "content": put})
-        guest_reply.append({"role": "assistant", "content": put})
-
-    # hostが発話するかの判定
-    n = branch(host_words, put)
+        append_message("user", "assistant", put)
 
     # ループ
     while True:
+            
+        # hostが発話するかの判定
+        n = branch(host_words, put)
 
         # 会話にhost_wordsに関する文章が含まれていたらhostが判定
-        if  n == 0:
+        if  51 <= n <= 100:
             # host
             response3 = host_api(host_messages)
             res3 = response3.choices[0].message.content
             print(green + "host:" + color_end + res3)
             log += "\nhost:" + res3
-            n = 1
+            n = 0
             # 会話を保存
             res1 = res3
             # プロンプトに文章を追加
-            host_messages.append({"role": "assistant", "content": res1})
-            guest_messages.append({"role": "user", "content": res1})
-            guest_reply.append({"role": "user", "content": res1})
+            append_message("assistant", "user", res1)
 
             # 正解したらhostの返答後終了
             if answer in user_input:
@@ -232,9 +242,7 @@ def main():
                 log += '\nuser:' + user_input
                 put = user_input
                 # プロンプトに文章を追加
-                host_messages.append({"role": "user", "content": put})
-                guest_messages.append({"role": "user", "content": put})
-                guest_reply.append({"role": "user", "content": put})
+                append_message("user", "user", put)
 
             elif put == res2:
                 # guest
@@ -244,11 +252,9 @@ def main():
                 log += "\nguest:" + res2
                 put = res2
                 # プロンプトに文章を追加
-                host_messages.append({"role": "user", "content": put})
-                guest_messages.append({"role": "assistant", "content": put})
-                guest_reply.append({"role": "assistant", "content": put})
+                append_message("user", "assistant", put)
 
-        elif n == 1:
+        elif 0 <= n <= 50:
             # 前の会話がuserだったらguestが発話
             if put == user_input:
                 # guest
@@ -258,9 +264,7 @@ def main():
                 log += "\nguest:" + res2
                 put = res2
                 # プロンプトに文章を追加
-                host_messages.append({"role": "user", "content": put})
-                guest_messages.append({"role": "assistant", "content": put})
-                guest_reply.append({"role": "assistant", "content": put})
+                append_message("user", "assistant", put)
 
             # 前の発話がguestだったらuserが発話
             elif put == res2:
@@ -272,12 +276,7 @@ def main():
                 log += '\nuser:' + user_input
                 put = user_input
                 # プロンプトに文章を追加
-                host_messages.append({"role": "user", "content": put})
-                guest_messages.append({"role": "user", "content": put})
-                guest_reply.append({"role": "user", "content": put})
-
-            # hostが発話するかの判定
-            n = branch(host_words, put)
+                append_message("user", "user", put)
 
 # 実行
 if __name__ == "__main__":
