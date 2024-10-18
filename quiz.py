@@ -42,8 +42,8 @@ def branch(host_words, talk):
     branch_messages = [
         {"role": "system", 
          "content": f"""
-                    次の文に{host_words}が含まれているかどうかを判断して0~100の数値を返してください
-                    含まれていないと判断した場合0に近く、含まれていると判断した場合100に近いです
+                    次の文に{host_words}が含まれているかどうかを判断して0~99の数値を返してください
+                    含まれていないと判断した場合0に近く、含まれていると判断した場合99に近いです
                     """}
         ]
 
@@ -222,7 +222,7 @@ def main():
         n = branch(host_words, put)
 
         # 会話にhost_wordsに関する文章が含まれていたらhostが判定
-        if  51 <= n <= 100:
+        if  51 <= n <= 99:
             # host
             response3 = host_api(host_messages)
             res3 = response3.choices[0].message.content
