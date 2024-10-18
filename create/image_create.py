@@ -34,8 +34,10 @@ def generate_candidates_api(image):
     {
       "role": "user",
       "content": [
-        {"type": "text", "text": "この画像から考えられることわざを5つ挙げて下さい。"},
-        {"type": "text", "text": "挙げるときは ことわざ1、ことわざ2 のように並べて出力してください"},
+        {"type": "text",
+         "text": "この画像から考えられることわざを5つ挙げて下さい。"},
+        {"type": "text",
+         "text": "挙げるときは ことわざ1、ことわざ2 のように並べて出力してください"},
         {
           "type": "image_url",
           "image_url": {
@@ -56,8 +58,10 @@ def generate_features_api(image):
     {
       "role": "user",
       "content": [
-        {"type": "text", "text": "この画像の特徴を5つ挙げて下さい。"},
-        {"type": "text", "text": "挙げるときは 特徴1、特徴2 のように並べて出力してください"},
+        {"type": "text",
+         "text": "この画像の特徴を5つ挙げて下さい。"},
+        {"type": "text",
+         "text": "挙げるときは 特徴1、特徴2 のように並べて出力してください"},
         {
           "type": "image_url",
           "image_url": {
@@ -75,8 +79,10 @@ def generate_words(n):
     
     # hostのプロンプト
     words_create_messages = [
-        {"role": "system", "content": f"{answer}から連想される単語のみを{n}個出してください"},
-        {"role": "system", "content": "出力する際はリンゴ、パイナップルのように並べて出力してください"}
+        {"role": "system",
+         "content": f"{answer}から連想される単語のみを{n}個出してください"},
+        {"role": "system",
+         "content": "出力する際はリンゴ、パイナップルのように並べて出力してください"}
         ]
     
     response = word_create_api(words_create_messages)
@@ -88,7 +94,12 @@ def generate_words(n):
 
 # 画像を生成する関数
 def generate_image(words):
-    prompt = f"ことわざ{answer}をテーマにした画像を{words}の要素を含めて生成してください。\n画像には文字を含めないでください。"
+    prompt = f"""
+              以下の条件を守って画像を生成してください
+              テーマ：{answer}
+              含めてほしい要素：{words}
+              含めてはいけない要素：文字
+              """
 
     response = generate_image_api(prompt)
     image_url = response.data[0].url
