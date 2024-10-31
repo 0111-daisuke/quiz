@@ -282,7 +282,7 @@ def main():
         res = re.sub(r'^(Guest:)+', '', res)
         print(blue + "Guest:" + color_end + res)
         # プロンプトに文章を追加
-        res + "Guest:" + res
+        res = "Guest:" + res
         append_message("user", "assistant", res)
         # 保存
         log += "\n" + res
