@@ -3,7 +3,9 @@
 
 # 実行方法
 git clone https://github.com/0111-daisuke/quiz.git
-\n pip install openai
-\n export "OPENAI_API_KEY"=[APIKEY]
+
+pip install openai
+
+export "OPENAI_API_KEY"=[APIKEY]
 
 python quiz.py
