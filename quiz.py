@@ -214,7 +214,7 @@ def main():
         }
     ]
 
-    # branch
+    # 次話者決定
     branch_messages = [
         {"role": "system", 
          "content": f"""
