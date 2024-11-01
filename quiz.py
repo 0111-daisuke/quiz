@@ -242,7 +242,7 @@ def main():
     def append_message(user1, user2, res):
         host_messages.append({"role": user1, "content": res})
         guest_messages.append({"role": user2, "content": res})
-        branch_messages.append({"role": "assistant", "content": res})
+        branch_messages.append({"role": "user", "content": res})
 
     # userが会話する確率
     user_probability = 0.7
