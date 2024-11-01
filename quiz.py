@@ -99,7 +99,7 @@ def branch(messages):
                 first_char = char
                 break
 
-        # 最初に出てくる文字によって次の発話を決定
+        # 最初に出てくる文字によって次の発話者を決定
         if first_char == 'h':
             variable = "host"
         elif first_char == 'g':
