@@ -12,7 +12,7 @@ def word_create_api(messages):
     return client.chat.completions.create(
         model = "gpt-4o",
         messages = messages,
-        temperature = 0.5,
+        temperature = 1.0,
         max_tokens = 100
         )
 
@@ -26,73 +26,17 @@ def generate_image_api(prompt):
         n = 1
         )
 
-# 回答候補生成用の設定
-def generate_candidates_api(image):
-    return client.chat.completions.create(
-  model="gpt-4o",
-  messages=[
-    {
-      "role": "user",
-      "content": [
-        {"type": "text",
-         "text": """この画像から考えられることわざを5つ挙げて下さい。挙げるときは以下の例を参考にしてください
-         【例】
-         
-         """},
-        {
-          "type": "image_url",
-          "image_url": {
-            "url": image,
-          },
-        },
-      ],
-    }
-  ],
-  max_tokens=300
-)
-
-# 画像の特徴生成用の設定
-def generate_features_api(image):
-    return client.chat.completions.create(
-  model="gpt-4o",
-  messages=[
-    {
-      "role": "user",
-      "content": [
-        {"type": "text",
-         "text": """以下の例を参考にこの画像の特徴を5つ挙げて下さい。
-         【例】
-         幻想的なデザイン: 巨大な鳥が人をつかんでいるという非現実的なシーンが描かれています。全体的に幻想的で夢のような雰囲気があります。
-         詳細なイラスト: 鳥や人物、背景の木々、雲などが非常に細かく描かれており、緻密な線画のスタイルが特徴的です。
-         鮮やかな色使い: 鳥の羽や空の色、雲などが鮮やかな色で塗られており、視覚的に強いインパクトがあります。
-         シンボリックな要素: 鳥が何かをくわえて飛んでいることや、人物が小島に立っていることなど、シンボリックな要素が含まれており、ストーリー性を感じさせます。
-         自然と人間の対比: 巨大な鳥と小さな人間という対比が強調されており、自然と人間の関係性を示唆しているように見えます。背景には海と木々があり、自然環境が大きなテーマとなっています。
-         """},
-        {
-          "type": "image_url",
-          "image_url": {
-            "url": image,
-          },
-        },
-      ],
-    }
-  ],
-  max_tokens=300
-)
-
 # 単語生成
 def generate_words(n):
     
     # hostのプロンプト
     words_create_messages = [
         {"role": "system",
-         "content": f"""以下の例を参考にことわざ{answer}から連想される単語を{n}個出してください。
+         "content": f"""
+         以下の例を参考にことわざ{answer}から連想される単語を{n}個出してください。
          【例】
          ことわざ: 犬も歩けば棒に当たる
-         関連単語1: 犬
-         関連単語2: 棒
-         関連単語3: 失敗
-         関連単語4: 災難
+         犬、棒、失敗、災難
          """}
         ]
     
@@ -106,10 +50,9 @@ def generate_words(n):
 # 画像を生成する関数
 def generate_image(words):
     prompt = f"""
-              以下の条件を守って画像を生成してください
+              以下の条件を守って画像を生成してください。画像には以下の要素を含めてください。
               テーマ：{answer}
               含めてほしい要素：{words}
-              含めてはいけない要素：文字
               """
 
     response = generate_image_api(prompt)
@@ -138,31 +81,6 @@ def get_next_filename(directory, base_name, extension):
             return filename
         i += 1
 
-# 回答候補の生成
-def generate_candidates(image):
-    response = generate_candidates_api(image)
-
-    candidates = response.choices[0].message.content
-    candidates = ' '.join(candidates)
-    candidates = candidates.replace(" ", "")
-    candidates = candidates.replace("\n", "")
-    candidates = candidates.split("ことわざ")
-
-    return candidates
-
-
-# 特徴の生成
-def generate_features(image):
-    response = generate_features_api(image)
-
-    features = response.choices[0].message.content
-    features = ' '.join(features)
-    features = features.replace(" ", "")
-    features = features.replace("\n", "")
-    features = features.split("特徴")
-
-    return features
-
 # データの収納
 def create_dataset(answer, image, candidates, features):
     # 新しいデータのセット
@@ -174,14 +92,14 @@ def create_dataset(answer, image, candidates, features):
     }
     
     # stockディレクトリのパス
-    stock_dir = '../stock'
+    stock_dir = '../image_stock'
     
     # stockディレクトリが存在しない場合は作成
     if not os.path.exists(stock_dir):
         os.makedirs(stock_dir)
         
     # stockディレクトリ内のstock.jsonファイルのパス
-    stock_json_path = os.path.join(stock_dir, 'stock.json')
+    stock_json_path = os.path.join(stock_dir, 'image_stock.json')
     
     # stock.jsonファイルが存在するかチェック
     if os.path.exists(stock_json_path):
@@ -219,7 +137,7 @@ def main():
     image = generate_image(words)
 
     # 画像生成と保存の実行
-    directory = "../stock"
+    directory = "../image_stock"
     base_name = "image"
     extension = "png"
     
@@ -233,14 +151,9 @@ def main():
     # 画像を保存
     save_image(image, filename)
 
-    # 回答候補と特徴の生成
-    candidates = generate_candidates(image)
-    features = generate_features(image)
-
-    # データをまとめて保存
+    # データを保存
     filename = filename.replace(f"{directory}/", "")
-    create_dataset(answer, filename, candidates, features)
-
+    create_dataset(answer, filename)
 
 # 実行
 if __name__ == "__main__":
