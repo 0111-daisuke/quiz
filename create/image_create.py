@@ -13,7 +13,7 @@ def word_create_api(messages):
         model = "gpt-4o",
         messages = messages,
         temperature = 0.5,
-        max_tokens = 100
+        max_tokens = 300
         )
 
 # 画像生成用の設定
@@ -35,9 +35,7 @@ def generate_candidates_api(image):
       "role": "user",
       "content": [
         {"type": "text",
-         "text": """この画像から考えられることわざを5つ挙げて下さい。挙げるときは以下の例を参考にしてください
-         【例】
-         
+         "text": """この画像から考えられることわざを5つ挙げて下さい。
          """},
         {
           "type": "image_url",
@@ -60,13 +58,16 @@ def generate_features_api(image):
       "role": "user",
       "content": [
         {"type": "text",
-         "text": """以下の例を参考にこの画像の特徴を5つ挙げて下さい。
+         "text": """
+         以下の例を参考にこの画像の特徴を5つ挙げて下さい。
+         ---------------
          【例】
          幻想的なデザイン: 巨大な鳥が人をつかんでいるという非現実的なシーンが描かれています。全体的に幻想的で夢のような雰囲気があります。
          詳細なイラスト: 鳥や人物、背景の木々、雲などが非常に細かく描かれており、緻密な線画のスタイルが特徴的です。
          鮮やかな色使い: 鳥の羽や空の色、雲などが鮮やかな色で塗られており、視覚的に強いインパクトがあります。
          シンボリックな要素: 鳥が何かをくわえて飛んでいることや、人物が小島に立っていることなど、シンボリックな要素が含まれており、ストーリー性を感じさせます。
          自然と人間の対比: 巨大な鳥と小さな人間という対比が強調されており、自然と人間の関係性を示唆しているように見えます。背景には海と木々があり、自然環境が大きなテーマとなっています。
+         ---------------
          """},
         {
           "type": "image_url",
@@ -80,37 +81,57 @@ def generate_features_api(image):
   max_tokens=300
 )
 
-# 単語生成
-def generate_words(n):
+# 物語生成
+def generate_story():
     
-    # hostのプロンプト
-    words_create_messages = [
+    # 物語を生成するプロンプト
+    story_create_messages = [
         {"role": "system",
-         "content": f"""以下の例を参考にことわざ{answer}から連想される単語を{n}個出してください。
+         "content": f"""
+         以下のことわざを基に200字程度の物語を考えてください。
+         ことわざ:{answer}
+         以下は物語の生成例です。これを参考にして物語を考えてください。
+         -------------------------------
          【例】
-         ことわざ: 犬も歩けば棒に当たる
-         関連単語1: 犬
-         関連単語2: 棒
-         関連単語3: 失敗
-         関連単語4: 災難
+         ことわざ: 三人寄れば文殊の知恵
+         昔々、小さな山里の村が山崩れで外界と隔絶され、食料が底をつきました。村の長老は三人の若者に協力を促し、それぞれが得意分野を活かして問題解決を始めました。一人は裏道を探索し、もう一人は動物の食料を調べ、最後の一人は簡易の橋を作り道を開通。三人の知恵を合わせ、村は食料を確保し、外界とのつながりを取り戻しました。この話は「三人寄れば文殊の知恵」として教訓となりました。
+         -------------------------------
          """}
         ]
+
+    response = word_create_api(story_create_messages)
+    story = response.choices[0].message.content
+
+    return story
+
+# プロンプト生成
+def generate_prompt(story):
     
-    response = word_create_api(words_create_messages)
-    words_list = response.choices[0].message.content
+    # 物語から画像生成のためのプロンプトを生成するプロンプト
+    prompt_create_messages = [
+        {"role": "system",
+         "content": f"""
+         あなたは与えられた物語から画像生成のためのプロンプトを考えてください。
+         以下はあることわざを基とした物語とプロンプトの生成例です。これを参考にプロンプトを考えてください。
+         -------------------------------
+         【物語の例】
+         ことわざ: 三人寄れば文殊の知恵
+         昔々、小さな山里の村が山崩れで外界と隔絶され、食料が底をつきました。村の長老は三人の若者に協力を促し、それぞれが得意分野を活かして問題解決を始めました。一人は裏道を探索し、もう一人は動物の食料を調べ、最後の一人は簡易の橋を作り道を開通。三人の知恵を合わせ、村は食料を確保し、外界とのつながりを取り戻しました。この話は「三人寄れば文殊の知恵」として教訓となりました。
+         【プロンプトの生成例】
+         "In a mountainous village, three young villagers—one skilled in climbing, one knowledgeable about plants, and another adept at crafting—are working together. They are surrounded by dense forest, rocky paths, and fallen trees. One is scouting a rocky hill, the other is inspecting edible plants, and the third is building a simple wooden bridge. The scene captures their teamwork and determination in a tranquil, natural setting with morning light breaking through the trees. The image reflects a blend of Japanese folklore and rustic, peaceful scenery."
+         -------------------------------
+         以下の物語のプロンプトを考えてください
+         {story}
+         """}
+        ]
 
-    words_combined = ' '.join(words_list)
+    response = word_create_api(prompt_create_messages)
+    prompt = response.choices[0].message.content
 
-    return words_combined
+    return prompt
 
 # 画像を生成する関数
-def generate_image(words):
-    prompt = f"""
-              以下の条件を守って画像を生成してください
-              テーマ：{answer}
-              含めてほしい要素：{words}
-              含めてはいけない要素：文字
-              """
+def generate_image(prompt):
 
     response = generate_image_api(prompt)
     image_url = response.data[0].url
@@ -214,9 +235,11 @@ def create_dataset(answer, image, candidates, features):
 def main():
 
     # 画像の生成
-    words = generate_words(10)
-    print(words)
-    image = generate_image(words)
+    story = generate_story()
+    print(story)
+    prompt = generate_prompt(story)
+    print(prompt)
+    image = generate_image(prompt)
 
     # 画像生成と保存の実行
     directory = "../stock"

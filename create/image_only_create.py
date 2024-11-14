@@ -13,7 +13,7 @@ def word_create_api(messages):
         model = "gpt-4o",
         messages = messages,
         temperature = 1.0,
-        max_tokens = 100
+        max_tokens = 300
         )
 
 # 画像生成用の設定
@@ -26,34 +26,63 @@ def generate_image_api(prompt):
         n = 1
         )
 
-# 単語生成
-def generate_words():
+# 物語生成
+def generate_story():
     
-    # hostのプロンプト
-    words_create_messages = [
+    # 物語を生成するプロンプト
+    story_create_messages = [
         {"role": "system",
          "content": f"""
-         以下の例を参考にことわざ{answer}から連想される単語を4個出してください。
+         あなたは物語の語り部です。
+         以下のルールに基づいて与えられたことわざを基に物語を考えてください。
+         【ルール】
+         1.語り部のような話し方
+         2.物語は200文字以内に収める
+         3.生成例を参考にする
+
+         ことわざ:{answer}
+         以下は物語の生成例です。これを参考にして物語を考えてください。
+         -------------------------------
          【例】
-         ことわざ: 犬も歩けば棒に当たる
-         犬、棒、失敗、災難
+         ことわざ: 三人寄れば文殊の知恵
+         昔々、小さな山里の村が山崩れで外界と隔絶され、食料が底をつきました。村の長老は三人の若者に協力を促し、それぞれが得意分野を活かして問題解決を始めました。一人は裏道を探索し、もう一人は動物の食料を調べ、最後の一人は簡易の橋を作り道を開通。三人の知恵を合わせ、村は食料を確保し、外界とのつながりを取り戻しました。この話は「三人寄れば文殊の知恵」として教訓となりました。
+         -------------------------------
          """}
         ]
+
+    response = word_create_api(story_create_messages)
+    story = response.choices[0].message.content
+
+    return story
+
+# プロンプト生成
+def generate_prompt(story):
     
-    response = word_create_api(words_create_messages)
-    words_list = response.choices[0].message.content
+    # 物語から画像生成のためのプロンプトを生成するプロンプト
+    prompt_create_messages = [
+        {"role": "system",
+         "content": f"""
+         あなたは与えられた物語から画像生成のためのプロンプトを考えてください。
+         以下はあることわざを基とした物語とプロンプトの生成例です。これを参考にプロンプトを考えてください。
+         -------------------------------
+         【物語の例】
+         ことわざ: 三人寄れば文殊の知恵
+         昔々、小さな山里の村が山崩れで外界と隔絶され、食料が底をつきました。村の長老は三人の若者に協力を促し、それぞれが得意分野を活かして問題解決を始めました。一人は裏道を探索し、もう一人は動物の食料を調べ、最後の一人は簡易の橋を作り道を開通。三人の知恵を合わせ、村は食料を確保し、外界とのつながりを取り戻しました。この話は「三人寄れば文殊の知恵」として教訓となりました。
+         【プロンプトの生成例】
+         "In a mountainous village, three young villagers—one skilled in climbing, one knowledgeable about plants, and another adept at crafting—are working together. They are surrounded by dense forest, rocky paths, and fallen trees. One is scouting a rocky hill, the other is inspecting edible plants, and the third is building a simple wooden bridge. The scene captures their teamwork and determination in a tranquil, natural setting with morning light breaking through the trees. The image reflects a blend of Japanese folklore and rustic, peaceful scenery."
+         -------------------------------
+         以下の物語のプロンプトを考えてください
+         {story}
+         """}
+        ]
 
-    words_combined = ' '.join(words_list)
+    response = word_create_api(prompt_create_messages)
+    prompt = response.choices[0].message.content
 
-    return words_combined
+    return prompt
 
 # 画像を生成する関数
-def generate_image(words):
-    prompt = f"""
-              以下の要素を含めた画像を生成してください。画像には以下の要素を含めてください。
-              テーマ：{answer}
-              含めてほしい要素：{words}
-              """
+def generate_image(prompt):
 
     response = generate_image_api(prompt)
     image_url = response.data[0].url
@@ -86,9 +115,7 @@ def create_dataset(answer, image, candidates, features):
     # 新しいデータのセット
     new_data = {
         "answer": answer,
-        "image": image,
-        "candidates": candidates,
-        "features": features
+        "image": image
     }
     
     # stockディレクトリのパス
@@ -132,9 +159,11 @@ def create_dataset(answer, image, candidates, features):
 def main():
 
     # 画像の生成
-    words = generate_words()
-    print(words)
-    image = generate_image(words)
+    story = generate_story()
+    print(story)
+    prompt = generate_prompt(story)
+    print(prompt)
+    image = generate_image(prompt)
 
     # 画像生成と保存の実行
     directory = "../image_stock"
