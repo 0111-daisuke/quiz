@@ -27,13 +27,13 @@ def generate_image_api(prompt):
         )
 
 # 単語生成
-def generate_words(n):
+def generate_words():
     
     # hostのプロンプト
     words_create_messages = [
         {"role": "system",
          "content": f"""
-         以下の例を参考にことわざ{answer}から連想される単語を{n}個出してください。
+         以下の例を参考にことわざ{answer}から連想される単語を4個出してください。
          【例】
          ことわざ: 犬も歩けば棒に当たる
          犬、棒、失敗、災難
@@ -50,7 +50,7 @@ def generate_words(n):
 # 画像を生成する関数
 def generate_image(words):
     prompt = f"""
-              以下の条件を守って画像を生成してください。画像には以下の要素を含めてください。
+              以下の要素を含めた画像を生成してください。画像には以下の要素を含めてください。
               テーマ：{answer}
               含めてほしい要素：{words}
               """
@@ -132,7 +132,7 @@ def create_dataset(answer, image, candidates, features):
 def main():
 
     # 画像の生成
-    words = generate_words(10)
+    words = generate_words()
     print(words)
     image = generate_image(words)
 
