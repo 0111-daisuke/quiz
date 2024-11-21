@@ -633,14 +633,55 @@
         "answer": "鬼の目にも涙",
         "image": "image38.png",
         "candidates": [
-            "以下は、この画像から考えられる",
-            "の例です：1.鬼の目にも涙2.笑う門には福来たる3.鬼も十八番茶も出花4.子供の口には戸が立てられぬ5.犬も歩けば棒に当たるこれらの",
-            "は、人々の行動や状況に対する一般的な教訓や知恵を表しています。この画像の背景や登場人物の関係性をもとにして選びました。"
+            "鬼の目にも涙",
+            "笑う門には福来たる",
+            "鬼も十八番茶も出花",
+            "子供の口には戸が立てられぬ",
+            "犬も歩けば棒に当たるこれらの"
         ],
         "features": [
-            "1.**幻想的なシーン**:人々が鬼と向き合っているシーンが非現実的で、物語性を感じさせる幻想的な雰囲気があります。2.**詳細な描写**:鬼や子供たちの表情、衣装、そして背景の山々や森林が非常に細かく描かれ、緻密なイラストスタイルが際立っています。3.**温かい光の演出**:日差しが山間から差し込んでおり、全体に温かみのある光が幻想的な効果を与えています。4.**文化的要素**:鬼のデザインや子供たちの和服など、日本的な文化要素が含まれ、場面に文化的な深みを加えています。5.**自然と人間の共存**:背景の雄大な自然が強調されており、人間と自然の共存や調和がテーマとなっています。"
+            "人々が鬼と向き合っているシーンが非現実的で、物語性を感じさせる幻想的な雰囲気があります。",
+            "鬼や子供たちの表情、衣装、そして背景の山々や森林が非常に細かく描かれ、緻密なイラストスタイルが際立っています。",
+            "日差しが山間から差し込んでおり、全体に温かみのある光が幻想的な効果を与えています。",
+            "鬼のデザインや子供たちの和服など、日本的な文化要素が含まれ、場面に文化的な深みを加えています。",
+            "背景の雄大な自然が強調されており、人間と自然の共存や調和がテーマとなっています。"
         ],
         "story": "昔々、ある山奥の村に、怖ろしい鬼が住んでいました。鬼は大変恐れられており、村人たちはいつも怯えて暮らしていました。しかし、その鬼にも一つだけ弱点がありました。それは、心優しい子供たちの笑顔を見ると、涙を流してしまうことでした。\n\nある日、村に大きな災いが降りかかり、村人たちは困り果てていました。村の子供たちは、何とかして村を救おうと考え、勇気を振り絞って鬼の住む山へ向かいました。鬼に出会った子供たちは、怖がることなく、にっこりと笑顔を見せました。\n\nその笑顔を見た鬼は、驚きのあまり涙を流し始めました。涙を流すと同時に、鬼の心の中にあった優しさが目覚め、村人たちの困難を解決するために力を貸すことを決意しました。こうして、鬼は村を救い、村人たちと共に平和に暮らすようになりました。\n\nこの話は「鬼の目にも涙」として、どんなに恐ろしい存在でも、心の奥底には優",
         "prompt": "In a remote mountain village, a group of brave children stands before a fearsome oni, a traditional Japanese demon. The oni, towering and intimidating, is taken aback as the children, unfazed, offer him warm, genuine smiles. The scene captures the moment when the oni, overwhelmed by the children's innocence and kindness, begins to shed tears. The setting is a mystical, forested mountain with a soft, ethereal light filtering through the trees, highlighting the contrast between the oni's fierce appearance and the gentle, transformative power of the children's smiles. The image reflects themes of compassion, courage, and the hidden goodness within even the most feared beings, embodying the essence of Japanese folklore."
+    },
+    {
+        "answer": "情けは人の為ならず",
+        "image": "image39.png",
+        "candidates": [
+            "老いては子に従え",
+            "三つ子の魂百まで",
+            "親しき中にも礼儀あり",
+            "郷に入っては郷に従え"
+        ],
+        "features": [
+            "緑豊かな田園風景が広がっており、自然の美しさと穏やかな村の情景が描かれています。",
+            "自然な色使いが特徴で、服装や背景の緑が落ち着きと調和を感じさせます。",
+            "若者が年配の方を支えて歩く姿が描かれ、世代を超えた助け合いや思いやりがテーマとして感じられます。",
+            "人々は和風の伝統的な衣装をまとっており、歴史的または文化的な背景を示唆しています。",
+            "複数の人々が一緒にいる様子が描かれており、密接なコミュニティの結びつきと協力を表現しています。"
+        ],
+        "story": "ある村に、心優しい青年の健太が住んでいました。ある日、健太は道端で困っているおじいさんを見つけ、彼を助けることにしました。おじいさんは足を痛めており、健太は彼を家まで送り届け、手当てをしました。おじいさんは感謝し、「情けは人の為ならず」と呟きました。\n\n数日後、健太は自分の畑で農作業をしていると、突然の雨で作業が中断してしまいました。すると、あの時の感謝の気持ちを忘れなかったおじいさんが、村の仲間たちを連れてやってきて、健太の畑を手伝ってくれました。おかげで、健太は無事に収穫を終えることができました。\n\n健太はその時初めて、「情けは人の為ならず」という言葉の意味を深く理解しました。人に親切にすることは、巡り巡って自分にも良いことをもたらすのだと気づいたのです。それ以来、健太はますます人々に親切に接するようになり、村中の信頼を得ることができました。",
+        "prompt": "\"In a quaint village, a kind-hearted young man named Kenta is helping an elderly man with a hurt leg on a rustic path. The scene is set in a serene countryside, with lush green fields and a traditional Japanese house in the background. Kenta is gently supporting the elderly man, showcasing his compassion. Days later, Kenta is in his field, under a sky turning grey with an impending rainstorm. Suddenly, the elderly man arrives with a group of villagers, all ready to assist Kenta with his harvest. The atmosphere is one of community spirit and gratitude, with villagers working together in harmony. The image captures the essence of kindness returning full circle, with a warm, heartfelt tone and the beauty of rural life.\""
+    },
+    {
+        "answer": "猫の手も借りたい",
+        "image": "image40.png",
+        "candidates": [
+            "申し訳ありませんが、特定の",
+            "を考えるのは難しいですが、画像から連想できる一般的なイメージやテーマに基づいて、以下のような",
+            "が考えられます。1.**「三人寄れば文殊の知恵」**-人々が集まることで良いアイデアが生まれること。2.**「笑う門には福来る」**-笑顔や笑いが幸福を呼ぶこと。3.**「力を合わせて櫓（やぐら）を組む」**-協力して仕事を成し遂げること。4.**「餅は餅屋」**-専門家に任せるのが一番ということ。5.**「与えることは受けること」**-他人に与えることで自分にも良いことが返ってくること。これらは、パン屋で多くの人が集まり交流している様子から考えられる",
+            "です。"
+        ],
+        "features": [
+            "1.**暖かい雰囲気**:パン屋の店内に人々が集まり、和やかな雰囲気が漂っています。温かみのある光がシーンを包み込んでいます。2.**詳細なイラスト**:パン職人の表情や服装、パンの粉の質感など細かいところまで描かれており、リアルで緻密なスタイルが",
+            "です。3.**和やかなストーリーテリング**:集まっている人々の表情や動作から、パン屋の繁盛ぶりと地域社会のつながりが感じられます。4.**豊富なパンの描写**:カウンターに並べられた様々な種類のパンが、イラストの食欲をそそる要素として描かれています。5.**人々の多様性**:若者から年配者まで多くの世代が一緒にパン屋を訪れており、多様な背景の人々が集まる温かいコミュニティが描かれています。"
+        ],
+        "story": "ある町の小さなパン屋「ふわふわベーカリー」は、急に大人気店となり、毎日行列ができるほど忙しくなりました。店主の佐藤さんは、パンを焼くのも接客するのも一人でこなしていましたが、ある日、どうしても手が足りなくなってしまいました。「猫の手も借りたいくらいだ」と佐藤さんは独り言を言いながら、困り果てていました。\n\nすると、近所に住む猫好きの少年、健太が店にやってきました。「僕、手伝いましょうか？」と申し出てくれたのです。佐藤さんは驚きつつも、健太の申し出を受け入れることにしました。健太はテキパキとレジを手伝い、パンの袋詰めも手際よくこなしました。\n\nその日、佐藤さんは健太のおかげで無事に店を切り盛りできました。「本当に猫の手も借りたいって思ってたけど、君がいてくれて助かったよ」と佐藤さんは健太に感謝しました。健太は笑顔で「またいつでも手伝いますよ」と答え、二人は新たな友情を築いたので",
+        "prompt": "\"In a bustling small bakery called 'Fuwafuwa Bakery', the shop owner, Mr. Sato, is overwhelmed with customers as the shop has suddenly become incredibly popular. The scene captures Mr. Sato, a middle-aged man with flour-dusted apron, looking exhausted yet determined, surrounded by a long line of eager customers. A young boy named Kenta, with a friendly smile and a love for cats, stands beside him, efficiently helping with the cash register and bagging bread. The bakery is warm and inviting, with the aroma of freshly baked bread wafting through the air, and shelves filled with golden, crusty loaves. The image reflects a sense of community and teamwork, with a touch of whimsy and warmth, as the morning sun streams through the bakery windows, casting a cozy glow over the bustling scene.\""
     }
 ]
