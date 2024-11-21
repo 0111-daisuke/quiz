@@ -88,7 +88,7 @@ def generate_story():
     story_create_messages = [
         {"role": "system",
          "content": f"""
-         以下のことわざを基に200字程度の物語を考えてください。
+         以下のことわざを基に200token以内で文章を考えてください。
          ことわざ:{answer}
          以下は物語の生成例です。これを参考にして物語を考えてください。
          -------------------------------
@@ -185,13 +185,15 @@ def generate_features(image):
     return features
 
 # データの収納
-def create_dataset(answer, image, candidates, features):
+def create_dataset(answer, image, candidates, features, story, prompt):
     # 新しいデータのセット
     new_data = {
         "answer": answer,
         "image": image,
         "candidates": candidates,
-        "features": features
+        "features": features,
+        "story": story,
+        "prompt": prompt
     }
     
     # stockディレクトリのパス
@@ -262,7 +264,7 @@ def main():
 
     # データをまとめて保存
     filename = filename.replace(f"{directory}/", "")
-    create_dataset(answer, filename, candidates, features)
+    create_dataset(answer, filename, candidates, features, story, prompt)
 
 
 # 実行
