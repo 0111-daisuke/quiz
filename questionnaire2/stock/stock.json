@@ -23,12 +23,17 @@
         "answer": "石の上にも三年",
         "image": "image3.png",
         "candidates": [
-            "以下の5つの",
-            "が考えられます：1.**鉄は熱いうちに打て**-チャンスや好機を逃さず、即座に行動することが重要であるという教え。2.**技は身を助ける**-習得した技術や知識は、自分を助ける武器になるという意味。3.**三つ子の魂百まで**-幼少期に身につけた性質や習慣は一生変わらないという意味。4.**石の上にも三年**-辛抱すれば成功や良い結果が得られるという教え。5.**見るは易く行うは難し**-見るだけなら簡単だが、実際に行動するのは難しいという意味。これらの",
-            "は、職人の技術、努力、学びの重要性を示す状況に関連しています。"
+            "鉄は熱いうちに打て",
+            "技は身を助ける",
+            "三つ子の魂百まで",
+            "見るは易く行うは難し"
         ],
         "features": [
-            "1.**職人の情景**:鍛冶屋の職人が熱心に作業をしているシーンが描かれており、職人技の世界を感じさせます。2.**温かい色調**:炎の明るい光が温かい雰囲気を演出し、全体的に親しみやすい印象を与えています。3.**伝統的な装い**:人々の服装や背景の建物が、歴史的または伝統的な日本の雰囲気を醸し出しています。4.**細部へのこだわり**:作業台周辺の道具や建築の細部が細かく描かれており、リアリティがあります。5.**コミュニティの要素**:作業を見守る周囲の人々が笑顔で親密さを表現しており、コミュニティのつながりを感じさせます。"
+            "鍛冶屋の職人が熱心に作業をしているシーンが描かれており、職人技の世界を感じさせます。",
+            "炎の明るい光が温かい雰囲気を演出し、全体的に親しみやすい印象を与えています。",
+            "人々の服装や背景の建物が、歴史的または伝統的な日本の雰囲気を醸し出しています。",
+            "作業台周辺の道具や建築の細部が細かく描かれており、リアリティがあります。",
+            "作業を見守る周囲の人々が笑顔で親密さを表現しており、コミュニティのつながりを感じさせます。"
         ],
         "story": "ある村に、若い鍛冶職人の健太がいました。彼は毎日、師匠のもとで鍛冶の技術を学びながら、ひたむきに働いていました。しかし、最初の一年は思うように成果が出ず、何度も失敗を繰り返しました。村の人々からは、「もう諦めた方がいい」と言われることもありました。\n\nそれでも健太は、「石の上にも三年」と自分に言い聞かせ、努力を続けました。二年目には少しずつ技術が向上し、師匠からも認められるようになりました。そして、三年目を迎えたある日、彼が作った刀が村で評判となり、村人たちから注文が殺到しました。\n\n健太は、諦めずに続けた努力が実を結んだことを実感しました。「石の上にも三年」とは、まさにこのことだと、彼は心から納得し、さらに技術を磨く決意を新たにしました。",
         "prompt": "\"In a small village, a young blacksmith named Kenta is diligently working in his workshop. The scene captures Kenta as he hammers away at a glowing piece of metal on his anvil, surrounded by tools and the warm glow of the forge. His face shows determination and focus, with sweat glistening on his brow. In the background, his mentor watches with a proud expression. The workshop is filled with the sounds of clanging metal and the smell of burning coal. Outside, villagers are peeking in, curious and impressed by Kenta's craftsmanship. The image reflects the theme of perseverance and dedication, illustrating the saying 'stone on stone for three years.' The setting is a blend of traditional Japanese village life and the rustic charm of a blacksmith's forge.\""
@@ -37,12 +42,18 @@
         "answer": "風前の灯",
         "image": "image4.png",
         "candidates": [
-            "画像から考えられる",
-            "をいくつか挙げますね。1.**灯台下暗し**（とうだいもとくらし）-意外と近くのことには気づきにくいこと。2.**明けない夜はない**-どんな困難も必ず終わりが来て、明るい未来が訪れること。3.**一寸先は闇**（いっすんさきはやみ）-将来のことは予測がつかず、不安定なこと。4.**備えあれば憂いなし**-あらかじめ準備をしておけば、困難に直面しても心配がないこと。5.**波風立てず**（なみかぜたてず）-事を荒立てず、穏やかにことを進めること。これらは画像の中の状況や環境に関連する日本の",
-            "です。"
+            "灯台下暗し",
+            "明けない夜はない",
+            "一寸先は闇",
+            "備えあれば憂いなし",
+            "波風立てず"
         ],
         "features": [
-            "1.**ドラマチックなシーン**:荒れた海と大きな灯台が背景にあり、緊張感のある状況を描いています。波が激しく打ち寄せ、人々は灯台の前に集まり、何かを訴えかけています。2.**詳細な描写**:灯台とその周囲の建物、人々の表情や服装が細かく描かれており、リアリティのあるイラストになっています。3.**光と影のコントラスト**:灯台の光と手にしたランタンの光が強調されており、暗い背景と対比をなして印象深い効果を生んでいます。4.**コミュニティの結束**:多くの人々が集まり、互いに支え合っている様子が描かれており、共同体の強さや団結力が伝わってきます。5.**動的な自然の表現**:海の波や空の雲が動きを持って描かれており、自然の力強さと人間との対比が感じられます。"
+            "荒れた海と大きな灯台が背景にあり、緊張感のある状況を描いています。波が激しく打ち寄せ、人々は灯台の前に集まり、何かを訴えかけています。",
+            "灯台とその周囲の建物、人々の表情や服装が細かく描かれており、リアリティのあるイラストになっています。",
+            "灯台の光と手にしたランタンの光が強調されており、暗い背景と対比をなして印象深い効果を生んでいます。",
+            "多くの人々が集まり、互いに支え合っている様子が描かれており、共同体の強さや団結力が伝わってきます。",
+            "海の波や空の雲が動きを持って描かれており、自然の力強さと人間との対比が感じられます。"
         ],
         "story": "ある小さな村に、年老いた灯台守の健二が住んでいました。彼の灯台は、村の漁師たちにとって命綱のような存在でした。しかし、灯台は老朽化が進み、灯火が消えかけていました。村人たちは「風前の灯のようだ」と心配し、何とかしなければと考えていました。\n\nある日、嵐が村を襲い、灯台の灯が消えてしまいました。健二は「このままでは漁師たちが危ない」と決意し、古い灯台を修理することにしました。村人たちも協力し、皆で灯台を支えるために集まりました。\n\n嵐が過ぎ去った翌朝、健二と村人たちは力を合わせて灯台を修復し、再び灯を灯しました。漁師たちは無事に帰港し、村は安堵の声で満ちました。「風前の灯」を救ったのは、健二と村人たちの絆でした。彼らはその日、灯台の明かりと共に新たな希望を見出しました。",
         "prompt": "\"In a small coastal village, an elderly lighthouse keeper named Kenji stands determined amidst a fierce storm. The old lighthouse, crucial for the fishermen's safety, is darkened and battered by the wind. Villagers, worried about the 'flickering light' of their beacon, gather around Kenji, ready to help. The scene captures the villagers braving the storm, working together to repair the lighthouse. The backdrop is a turbulent sea, with waves crashing against the rocky shore. As dawn breaks, the village is bathed in warm light, symbolizing hope and unity. The image reflects themes of community, resilience, and the enduring spirit of a small village facing adversity.\""
@@ -51,13 +62,18 @@
         "answer": "善は急げ",
         "image": "image5.png",
         "candidates": [
-            "申し訳ありませんが、写真の内容に基づいた人の認識はできませんが、描写されている状況に基づいて考えられる",
-            "を挙げることができます。1.「石の上にも三年」-忍耐や継続が大切であることを表しています。絵を描く作業には時間と努力が必要です。2.「一芸は道に通ず」-一つの技術や芸が研ぎ澄まされると、それが他の道にも通じるという意味です。3.「千里の道も一歩から」-大きな目標達成には小さな一歩から始めることが重要であることを示します。4.「習うより慣れろ」-理論よりも実践を通して学ぶことが重要であるという意味です。5.「好きこそ物の上手なれ」-自分の好きなことは自然と上達することを示しています。絵を描く楽しさを表現しています。これらの",
-            "は、絵を描くことや努力、情熱に関連しています。"
+            "石の上にも三年",
+            "一芸は道に通ず",
+            "千里の道も一歩から",
+            "習うより慣れろ",
+            "好きこそ物の上手なれ"
         ],
         "features": [
-            "申し訳ありませんが、人物について詳細を述べることはできませんが、画像の一般的な",
-            "を以下に挙げます。1.**アーティスティックな雰囲気**:絵を描いている様子が捉えられており、創作活動の場面がリアルに再現されています。2.**自然光の利用**:大きな窓から差し込む自然光が、スタジオ内を明るく照らし、温かみのある雰囲気を作り出しています。3.**カラーパレット**:絵の具やキャンバスに用いられている色彩が多様で、ビビッドな色の使い方が視覚的に目を引きます。4.**クリエイティブスペース**:背景にはイーゼルとキャンバスが並んでおり、制作のためのスタジオ空間が広がっています。5.**集中した表情**:制作に没頭している姿勢や表情により、アートへの情熱と専念が伝わってきます。"
+            "絵を描いている様子が捉えられており、創作活動の場面がリアルに再現されています。",
+            "大きな窓から差し込む自然光が、スタジオ内を明るく照らし、温かみのある雰囲気を作り出しています。",
+            "絵の具やキャンバスに用いられている色彩が多様で、ビビッドな色の使い方が視覚的に目を引きます。",
+            "背景にはイーゼルとキャンバスが並んでおり、制作のためのスタジオ空間が広がっています。",
+            "制作に没頭している姿勢や表情により、アートへの情熱と専念が伝わってきます。"
         ],
         "story": "ある日、若い画家の美咲は、ギャラリーでの個展開催の話を持ちかけられました。しかし、準備期間が短く、彼女は迷っていました。「急いで準備するのは無理かもしれない」と友人に相談すると、友人は「善は急げよ」と励ましました。その言葉に背中を押された美咲は、すぐに作品制作に取りかかりました。毎日遅くまで絵を描き続け、なんとか個展の日までに作品を仕上げました。\n\n結果、個展は大成功を収め、多くの人々が彼女の作品に感銘を受けました。「あの時、迷わずに行動してよかった」と美咲は思いました。「善は急げ」ということわざの意味を実感し、これからも挑戦を恐れずに進んでいこうと心に決めました。",
         "prompt": "\"In a bright and modern art studio, young artist Misaki is surrounded by canvases, brushes, and vibrant paints. She is intensely focused, painting with determination and passion, as the sunlight streams through large windows. The room is filled with her unfinished artworks, each reflecting her unique style and creativity. Misaki's expression shows a mix of urgency and inspiration, driven by the encouragement of her friend. The scene captures the essence of her journey towards her successful solo exhibition, embodying the spirit of 'seize the opportunity' with a backdrop of urban artistic energy and a hint of Japanese cultural influence.\""
