@@ -201,7 +201,7 @@ def create_dataset(answer, image, candidates, features, story, prompt):
     }
     
     # stockディレクトリのパス
-    stock_dir = '../stock'
+    stock_dir = '../questionnaire2/stock'
     
     # stockディレクトリが存在しない場合は作成
     if not os.path.exists(stock_dir):
@@ -248,7 +248,7 @@ def main():
     image = generate_image(prompt)
 
     # 画像生成と保存の実行
-    directory = "../stock"
+    directory = "../questionnaire2/stock"
     base_name = "image"
     extension = "png"
     
