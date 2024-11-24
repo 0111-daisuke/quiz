@@ -3,30 +3,21 @@
         "answer": "弘法も筆の誤り",
         "image": "image1.png",
         "candidates": [
-            "画像から考えられる",
-            "をいくつか挙げてみますね。1.**習うより慣れよ**-習うことよりも実際に体験することが重要であるという意味。2.**石の上にも三年**-辛抱して続ければ、必ず成果が出るという意味。3.**初心忘るべからず**-初心を忘れず、謙虚な心持ちを持ち続けることの大切さ。4.**千里の道も一歩から**-長い道のりでも小さなことから始まるという意味。5.**門前の小僧習わぬ経を読む**-知らず知らずのうちに学ぶことができるという意味。これらの",
-            "は、学びや努力などを表しています。"
+            "習うより慣れよ",
+            "石の上にも三年",
+            "初心忘るべからず",
+            "千里の道も一歩から",
+            "門前の小僧習わぬ経を読む"
         ],
         "features": [
-            "1.**伝統的な雰囲気**:和服を着た人々が描かれており、伝統的な日本文化の雰囲気を感じます。2.**書道というテーマ**:中央の人物が書道の作品を見ている場面です。周りには大きな書が飾られ、文化的なテーマが強調されています。3.**温かみのある色調**:柔らかい光と影で温かみのある色合いが使われ、落ち着いた印象を与えています。4.**集団の調和**:人々が穏やかに集まり、集団の調和や尊重が表現されています。5.**教育的なシーン**:年長者が若い人に何かを指導しているような場面で、教育や伝承がテーマとして示されています。"
+            "和服を着た人々が描かれており、伝統的な日本文化の雰囲気を感じます。",
+            "中央の人物が書道の作品を見ている場面です。周りには大きな書が飾られ、文化的なテーマが強調されています。",
+            "柔らかい光と影で温かみのある色合いが使われ、落ち着いた印象を与えています。",
+            "人々が穏やかに集まり、集団の調和や尊重が表現されています。",
+            "年長者が若い人に何かを指導しているような場面で、教育や伝承がテーマとして示されています。"
         ],
         "story": "ある日、書道の名人である佐藤先生は、地元の書道展で作品を披露することになりました。彼は自信満々で、完璧な作品を仕上げるつもりでした。展示会当日、彼の作品は多くの人々の注目を集め、称賛の声が上がりました。しかし、ひとりの若い学生が近づき、「先生、この漢字は間違っています」と指摘しました。佐藤先生は驚き、自分の作品を見直しました。確かに、一文字が誤っていました。「弘法も筆の誤り」と佐藤先生は苦笑いし、学生に感謝しました。彼はその後、その経験を生かし、さらに精進することを誓いました。この出来事は、誰にでも間違いはあるという大切な教訓を彼に教えました。",
         "prompt": "\"In a bustling local calligraphy exhibition, the renowned calligraphy master, Mr. Sato, stands proudly beside his latest creation. The gallery is filled with admirers, their eyes fixed on the elegant strokes and intricate details of his work. The atmosphere is vibrant, with soft ambient lighting highlighting the beauty of each piece. Among the crowd, a young student approaches Mr. Sato, pointing out a subtle error in one of the characters. The scene captures the moment of realization, as Mr. Sato, with a humble smile, acknowledges the student's observation. The image reflects a blend of traditional Japanese culture and the universal theme of humility and learning from mistakes, set against a backdrop of framed calligraphy and appreciative onlookers.\""
-    },
-    {
-        "answer": "猿も木から落ちる",
-        "image": "image2.png",
-        "candidates": [
-            "この画像から考えられる",
-            "を以下に挙げます。1.**猿も木から落ちる**-誰でも失敗することがある。2.**木登りの猿**-得意なことをする人。3.**一人一芸**-誰もが何か得意なものを持っている。4.**立つ鳥跡を濁さず**-物事をきれいに終わらせる。5.**袖振り合うも多生の縁**-偶然の出会いも何かの縁である。この画像は多くの人々が猿の行動に注目している様子を示しており、それにまつわる",
-            "を考えることができます。"
-        ],
-        "features": [
-            "1.活気ある場面描写:多くの人々と猿が集まり、木を登る猿に注目しています。お祭りかイベントのような賑やかな雰囲気が漂います。2.自然の調和:高い木々や遠くに広がる山並みが描かれており、自然の中での人々と猿の共生が強調されています。3.ディテールに富んだイラスト:人物や衣服、背景の木々や山々が非常に詳細に描かれています。緻密で手の込んだ絵柄が",
-            "的です。4.カラフルな表現:服や旗の色など、鮮やかな彩りが用いられ、視覚的に豊かな印象を与えます。5.共同体の象徴:集まった人々が協力し合っている様子が描かれ、共同体や団結の強さがテーマとなっています。"
-        ],
-        "story": "ある日、優秀な木登りの達人である猿のサムは、村の木登り大会に参加しました。サムはこれまで何度も優勝を飾っており、今回も自信満々で挑みました。しかし、大会当日、サムは急に足を滑らせ、木から落ちてしまいました。観客は驚き、サムもショックを受けました。その後、サムは「猿も木から落ちる」と自分に言い聞かせ、失敗を受け入れることにしました。\n\n次の大会に向けて、サムはさらにトレーニングを重ね、自分の弱点を見つめ直しました。そして、次の大会では見事に優勝を果たし、観客から大きな拍手を受けました。この経験を通じて、サムは失敗から学ぶことの大切さを知り、より一層成長することができたのでした。",
-        "prompt": "\"In a lively village setting, a skilled monkey named Sam is participating in a tree-climbing competition. The scene captures the moment just before Sam slips and falls from a tall tree, with a crowd of surprised villagers watching in the background. The atmosphere is filled with tension and anticipation. Later, the image transitions to show Sam in a peaceful, natural setting, diligently training and reflecting on his past mistake, surrounded by lush greenery and a clear blue sky. The final part of the scene depicts a triumphant Sam at the next competition, confidently reaching the top of the tree, receiving cheers and applause from the crowd. The image conveys themes of resilience, learning from failure, and personal growth, with a blend of whimsical and motivational elements.\""
     },
     {
         "answer": "石の上にも三年",
@@ -144,5 +135,48 @@
         ],
         "story": "ある日、旅人の健一は山道を歩いていました。彼は一人での旅を好むため、静かな時間を楽しんでいました。しかし、道中で急に天候が悪化し、激しい雨が降り始めました。健一は雨宿りを探していると、同じく旅をしている美咲という女性に出会いました。美咲も困っている様子で、二人は近くの小屋で雨宿りをすることにしました。\n\n小屋の中で、健一と美咲は旅の話をしながら時間を過ごしました。お互いの旅の目的やこれまでの経験を語り合ううちに、二人は次第に打ち解けていきました。雨が止むと、健一は「旅は道連れ世は情けと言うように、一人よりも誰かと一緒の方が心強いね」と微笑みました。\n\nその後、二人はお互いの旅を手伝い合いながら、共に山を下りることにしました。旅の終わりには、健一と美咲は新たな友情を築き、また会うことを約束して別れました。旅は道連れ世は情け、",
         "prompt": "\"In a serene mountain landscape, two travelers—Kenichi, a solitary wanderer, and Misaki, a fellow adventurer—find shelter in a rustic cabin as a sudden storm unleashes heavy rain. The scene captures the intimate moment inside the cozy cabin, where candlelight flickers against wooden walls and raindrops patter on the roof. Kenichi and Misaki sit across from each other, sharing stories and laughter, their expressions warm and friendly. Outside, the storm rages on, with dark clouds and blurred lines of rain, contrasting the tranquil camaraderie inside. The image reflects the theme of companionship and kindness in unexpected encounters, set in a picturesque, mountainous backdrop.\""
+    },
+    {
+        "answer": "鉄は熱いうちに打て",
+        "image": "image2.png",
+        "candidates": [
+            "申し訳ありませんが、画像の内容については詳しく説明できません。ただし、画像の状況に関連する",
+            "をいくつか挙げることはできます。1.鉄は熱いうちに打て2.師匠の教えを忠実に守る3.千里の道も一歩から4.熱心に学ぶ者は成功する5.継続は力なりこれらの",
+            "は、学びや努力、そして適切なタイミングの重要性を示しています。"
+        ],
+        "features": [
+            "1.**歴史的な雰囲気**:伝統的な衣装を着た人物たちが登場し、歴史的な場面を描写しているように感じられます。2.**職人的なテーマ**:若い人物が鍛冶仕事をしている様子から、職人技や技術の伝承がテーマとされていることが伺えます。3.**自然な光の演出**:光が人物や背景に柔らかく当たり、温かみのあるシーンを演出しています。4.**師弟関係の象徴性**:年配の人物が見守るように立っていることから、師弟関係や指導の要素が感じられます。5.**伝統的建築の背景**:背景には伝統的な建物が描かれており、日本の文化的な風景が表現されています。"
+        ],
+        "story": "ある村に、若い鍛冶職人の健太がいました。ある日、師匠が新しい技術を教えてくれると聞き、健太は興奮しました。しかし、その夜、友人たちに誘われて祭りに行くことになり、翌朝には疲れ果てていました。\n\n師匠は「鉄は熱いうちに打て」と言い、健太にすぐに作業を始めるよう促しましたが、健太は怠けてしまいました。その結果、せっかくの熱した鉄をうまく加工できず、失敗してしまいます。\n\nその日、健太は自分の怠慢を悔やみました。師匠の言葉の意味を深く理解し、次の日からは新しい技術を学ぶために全力を尽くすことを誓いました。健太は、努力を惜しまず、ついに村一番の鍛冶職人として成長しました。\n\nこの経験を通して、健太は「鉄は熱いうちに打て」という教訓を心に刻み、どんな機会も逃さずに挑戦することの大切さを学びました。",
+        "prompt": "\"In a traditional Japanese village, a young blacksmith named Kenta stands in a modest forge, surrounded by tools and glowing embers. His face reflects a mix of determination and regret as he gazes at a piece of iron cooling on the anvil—evidence of a missed opportunity. The early morning light filters through the forge's window, casting a warm glow on his focused expression. Nearby, his wise master observes with a knowing look, embodying the lesson of 'strike while the iron is hot.' The scene captures the pivotal moment of realization and growth, with elements of Japanese craftsmanship and cultural tradition highlighted in the rustic, industrious setting.\""
+    },
+    {
+        "answer": "笑う門には福来る",
+        "image": "image11.png",
+        "candidates": [
+            "この画像から考えられる",
+            "を5つ挙げると:1.災い転じて福となす2.先んずれば人を制す3.知恵は力なり4.警鐘を鳴らす5.一寸先は闇これらの",
+            "は、危機を前にした知恵や警告の重要性と関係しています。"
+        ],
+        "features": [
+            "1.温かみのある雰囲気:建物の中からあふれる暖かな光と、人々の笑顔が全体的に温かみのある雰囲気を醸し出しています。2.カラフルな色使い:衣服や花、建物が鮮やかな色彩で描かれており、視覚的にインパクトがあります。3.コミュニケーションの象徴:中央に立つ人物を囲むように集まった人々が会話や交流を示唆しており、人間関係の調和が感じられます。4.自然の力の表現:背景には大きな波が描かれており、自然の圧倒的な力とそれに対峙する人々の対比が",
+            "です。5.日常と非日常の融合:家や庭の穏やかな様子と、迫り来る壮大な波のコントラストが、日常と非日常の境界を表現しています。"
+        ],
+        "story": "ある小さな村に、いつも笑顔を絶やさない陽気な男、健太が住んでいました。彼の家はいつも明るく、訪れる人々を笑顔で迎えるため、村人たちは「笑う門には福来る」と言って彼の家を称賛しました。\n\nある日、村に大きな嵐がやってきて、多くの家が被害を受けました。しかし、健太の家だけは無事でした。村人たちは不思議に思い、どうして健太の家は無事だったのか尋ねました。健太は笑って言いました。「毎日笑っていると、福が来て守ってくれるんだよ。」\n\n村人たちはその言葉を信じ、健太のように毎日笑顔を心がけるようになりました。不思議なことに、村全体に幸福が訪れ、次第に人々の心が豊かになっていきました。村人たちは改めて「笑う門には福来る」の意味を実感し、健太に感謝しました。",
+        "prompt": "\"In a small, picturesque village, a cheerful man named Kenta is known for his ever-present smile and welcoming home. His house stands untouched amidst the aftermath of a fierce storm, while other homes show signs of damage. Curious villagers gather around Kenta's bright and inviting home, which is adorned with flowers and a warm glow, as he explains with a hearty laugh that his constant laughter brings good fortune and protection. The scene captures the contrast between the storm's aftermath and the untouched serenity of Kenta's home, with villagers inspired by his positive spirit. The image reflects themes of joy, resilience, and the power of a positive attitude, set in a quaint, idyllic village landscape.\""
+    },
+    {
+        "answer": "焼け石に水",
+        "image": "image12.png",
+        "candidates": [
+            "この画像から考えられる",
+            "を以下に挙げます：1.**苦あれば楽あり**2.**雨降って地固まる**3.**待てば海路の日和あり**4.**石の上にも三年**5.**時は金なり**これらの",
+            "は、困難の後に希望があることや、忍耐強く待つことの重要性を表しています。"
+        ],
+        "features": [
+            "1.**劇的な天候の変化**:乾燥した大地に降り注ぐ雨が描かれ、待望の恵みをもたらす瞬間が表現されています。2.**感情豊かな表情**:人々の喜びや感謝の表情が詳細に描かれ、雨を迎える感動的な雰囲気を醸し出しています。3.**社会的なテーマ**:さまざまな年齢の人々が同じ状況にいることから、コミュニティや共同体の重要性を感じさせます。4.**細密な描写**:家屋や衣服の細部、土地のひび割れなどが非常に細かく描かれており、リアリティがあります。5.**自然との関係**:厳しい自然環境の中で生きる人々の姿が描かれ、自然と人間の関係を考えさせられます。"
+        ],
+        "story": "ある日、村の農夫たちは長引く干ばつに苦しんでいました。畑は枯れ果て、収穫は見込めません。村の長老は「焼け石に水だが、少しでも水を運んで畑に撒こう」と提案しました。しかし、若い農夫の健太は「そんなことしても意味がない」と反論します。「このままでは村が滅びる」と長老は説得を続け、村人たちは渋々ながらも協力することにしました。\n\nある日、突然の夕立が村を襲い、畑にたっぷりと雨が降りました。村人たちは歓喜し、長老の言葉の意味を理解しました。「焼け石に水でも、続けることが大切なんだ」と健太は反省し、村の皆と共に新たな希望を胸に抱きました。それからは、村全体が協力して畑を守ることを誓い、未来への一歩を踏み出しました。",
+        "prompt": "\"In a drought-stricken village, a group of weary farmers, led by an elderly village elder, are seen carrying small buckets of water to their parched fields. The landscape is dry and cracked, with withered crops and a scorching sun overhead. Among them, a young farmer named Kenta stands with a skeptical expression, initially doubting the elder's plan. Suddenly, dark clouds gather in the sky, and a heavy downpour begins, soaking the fields and bringing relief to the villagers. The scene captures the transformation from despair to hope, with villagers rejoicing in the rain. The image reflects the themes of perseverance, community effort, and the unexpected blessings of nature, set in a rural, traditional Japanese setting.\""
     }
 ]
