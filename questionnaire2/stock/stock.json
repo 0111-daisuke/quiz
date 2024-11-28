@@ -1,44 +1,5 @@
 [
     {
-        "answer": "弘法も筆の誤り",
-        "image": "image1.png",
-        "candidates": [
-            "習うより慣れよ",
-            "石の上にも三年",
-            "初心忘るべからず",
-            "千里の道も一歩から",
-            "門前の小僧習わぬ経を読む"
-        ],
-        "features": [
-            "和服を着た人々が描かれており、伝統的な日本文化の雰囲気を感じます。",
-            "中央の人物が書道の作品を見ている場面です。周りには大きな書が飾られ、文化的なテーマが強調されています。",
-            "柔らかい光と影で温かみのある色合いが使われ、落ち着いた印象を与えています。",
-            "人々が穏やかに集まり、集団の調和や尊重が表現されています。",
-            "年長者が若い人に何かを指導しているような場面で、教育や伝承がテーマとして示されています。"
-        ],
-        "story": "ある日、書道の名人である佐藤先生は、地元の書道展で作品を披露することになりました。彼は自信満々で、完璧な作品を仕上げるつもりでした。展示会当日、彼の作品は多くの人々の注目を集め、称賛の声が上がりました。しかし、ひとりの若い学生が近づき、「先生、この漢字は間違っています」と指摘しました。佐藤先生は驚き、自分の作品を見直しました。確かに、一文字が誤っていました。「弘法も筆の誤り」と佐藤先生は苦笑いし、学生に感謝しました。彼はその後、その経験を生かし、さらに精進することを誓いました。この出来事は、誰にでも間違いはあるという大切な教訓を彼に教えました。",
-        "prompt": "\"In a bustling local calligraphy exhibition, the renowned calligraphy master, Mr. Sato, stands proudly beside his latest creation. The gallery is filled with admirers, their eyes fixed on the elegant strokes and intricate details of his work. The atmosphere is vibrant, with soft ambient lighting highlighting the beauty of each piece. Among the crowd, a young student approaches Mr. Sato, pointing out a subtle error in one of the characters. The scene captures the moment of realization, as Mr. Sato, with a humble smile, acknowledges the student's observation. The image reflects a blend of traditional Japanese culture and the universal theme of humility and learning from mistakes, set against a backdrop of framed calligraphy and appreciative onlookers.\""
-    },
-    {
-        "answer": "石の上にも三年",
-        "image": "image3.png",
-        "candidates": [
-            "鉄は熱いうちに打て",
-            "技は身を助ける",
-            "三つ子の魂百まで",
-            "見るは易く行うは難し"
-        ],
-        "features": [
-            "鍛冶屋の職人が熱心に作業をしているシーンが描かれており、職人技の世界を感じさせます。",
-            "炎の明るい光が温かい雰囲気を演出し、全体的に親しみやすい印象を与えています。",
-            "人々の服装や背景の建物が、歴史的または伝統的な日本の雰囲気を醸し出しています。",
-            "作業台周辺の道具や建築の細部が細かく描かれており、リアリティがあります。",
-            "作業を見守る周囲の人々が笑顔で親密さを表現しており、コミュニティのつながりを感じさせます。"
-        ],
-        "story": "ある村に、若い鍛冶職人の健太がいました。彼は毎日、師匠のもとで鍛冶の技術を学びながら、ひたむきに働いていました。しかし、最初の一年は思うように成果が出ず、何度も失敗を繰り返しました。村の人々からは、「もう諦めた方がいい」と言われることもありました。\n\nそれでも健太は、「石の上にも三年」と自分に言い聞かせ、努力を続けました。二年目には少しずつ技術が向上し、師匠からも認められるようになりました。そして、三年目を迎えたある日、彼が作った刀が村で評判となり、村人たちから注文が殺到しました。\n\n健太は、諦めずに続けた努力が実を結んだことを実感しました。「石の上にも三年」とは、まさにこのことだと、彼は心から納得し、さらに技術を磨く決意を新たにしました。",
-        "prompt": "\"In a small village, a young blacksmith named Kenta is diligently working in his workshop. The scene captures Kenta as he hammers away at a glowing piece of metal on his anvil, surrounded by tools and the warm glow of the forge. His face shows determination and focus, with sweat glistening on his brow. In the background, his mentor watches with a proud expression. The workshop is filled with the sounds of clanging metal and the smell of burning coal. Outside, villagers are peeking in, curious and impressed by Kenta's craftsmanship. The image reflects the theme of perseverance and dedication, illustrating the saying 'stone on stone for three years.' The setting is a blend of traditional Japanese village life and the rustic charm of a blacksmith's forge.\""
-    },
-    {
         "answer": "風前の灯",
         "image": "image4.png",
         "candidates": [
@@ -57,26 +18,6 @@
         ],
         "story": "ある小さな村に、年老いた灯台守の健二が住んでいました。彼の灯台は、村の漁師たちにとって命綱のような存在でした。しかし、灯台は老朽化が進み、灯火が消えかけていました。村人たちは「風前の灯のようだ」と心配し、何とかしなければと考えていました。\n\nある日、嵐が村を襲い、灯台の灯が消えてしまいました。健二は「このままでは漁師たちが危ない」と決意し、古い灯台を修理することにしました。村人たちも協力し、皆で灯台を支えるために集まりました。\n\n嵐が過ぎ去った翌朝、健二と村人たちは力を合わせて灯台を修復し、再び灯を灯しました。漁師たちは無事に帰港し、村は安堵の声で満ちました。「風前の灯」を救ったのは、健二と村人たちの絆でした。彼らはその日、灯台の明かりと共に新たな希望を見出しました。",
         "prompt": "\"In a small coastal village, an elderly lighthouse keeper named Kenji stands determined amidst a fierce storm. The old lighthouse, crucial for the fishermen's safety, is darkened and battered by the wind. Villagers, worried about the 'flickering light' of their beacon, gather around Kenji, ready to help. The scene captures the villagers braving the storm, working together to repair the lighthouse. The backdrop is a turbulent sea, with waves crashing against the rocky shore. As dawn breaks, the village is bathed in warm light, symbolizing hope and unity. The image reflects themes of community, resilience, and the enduring spirit of a small village facing adversity.\""
-    },
-    {
-        "answer": "善は急げ",
-        "image": "image5.png",
-        "candidates": [
-            "石の上にも三年",
-            "一芸は道に通ず",
-            "千里の道も一歩から",
-            "習うより慣れろ",
-            "好きこそ物の上手なれ"
-        ],
-        "features": [
-            "絵を描いている様子が捉えられており、創作活動の場面がリアルに再現されています。",
-            "大きな窓から差し込む自然光が、スタジオ内を明るく照らし、温かみのある雰囲気を作り出しています。",
-            "絵の具やキャンバスに用いられている色彩が多様で、ビビッドな色の使い方が視覚的に目を引きます。",
-            "背景にはイーゼルとキャンバスが並んでおり、制作のためのスタジオ空間が広がっています。",
-            "制作に没頭している姿勢や表情により、アートへの情熱と専念が伝わってきます。"
-        ],
-        "story": "ある日、若い画家の美咲は、ギャラリーでの個展開催の話を持ちかけられました。しかし、準備期間が短く、彼女は迷っていました。「急いで準備するのは無理かもしれない」と友人に相談すると、友人は「善は急げよ」と励ましました。その言葉に背中を押された美咲は、すぐに作品制作に取りかかりました。毎日遅くまで絵を描き続け、なんとか個展の日までに作品を仕上げました。\n\n結果、個展は大成功を収め、多くの人々が彼女の作品に感銘を受けました。「あの時、迷わずに行動してよかった」と美咲は思いました。「善は急げ」ということわざの意味を実感し、これからも挑戦を恐れずに進んでいこうと心に決めました。",
-        "prompt": "\"In a bright and modern art studio, young artist Misaki is surrounded by canvases, brushes, and vibrant paints. She is intensely focused, painting with determination and passion, as the sunlight streams through large windows. The room is filled with her unfinished artworks, each reflecting her unique style and creativity. Misaki's expression shows a mix of urgency and inspiration, driven by the encouragement of her friend. The scene captures the essence of her journey towards her successful solo exhibition, embodying the spirit of 'seize the opportunity' with a backdrop of urban artistic energy and a hint of Japanese cultural influence.\""
     },
     {
         "answer": "覆水盆に返らず",
@@ -110,20 +51,6 @@
         "prompt": "\"In a vibrant forest setting, a group of animals is gathered for a meeting. At the center, a passionate rabbit named Peter is presenting his ideas with enthusiasm. Surrounding him are various animals, including a large, stoic horse named Brown, who listens silently. The scene captures the animals' diverse reactions—some attentive, some whispering to each other. The forest is lush and green, with sunlight filtering through the canopy, creating a serene yet lively atmosphere. As weeks pass, the forest transforms into a pristine wonderland, with animals joyfully celebrating their success. Among them, Brown is now actively participating, symbolizing the power of perseverance and collective effort. The image reflects themes of environmentalism, community, and the eventual impact of persistence.\""
     },
     {
-        "answer": "海老で鯛を釣る",
-        "image": "image8.png",
-        "candidates": [
-            "この画像から考えられる",
-            "を5つ挙げてみます。1.**魚心あれば水心**-互いに好意を持つ者同士は自然に通じ合うこと。2.**一石二鳥**-一つの行動で二つの利益を得ること。3.**転ばぬ先の杖**-事前に準備しておけば、失敗を防げること。4.**朝飯前**-簡単にできることや、手軽であることのたとえ。5.**待てば海路の日和あり**-辛抱強く待っていれば、やがて良い状況が生まれること。"
-        ],
-        "features": [
-            "以下は画像の",
-            "の例です。1.臨場感のある描写:釣りをする人物が捉えた魚を釣り上げる瞬間が切り取られ、動きが感じられます。2.光の美しい表現:夕日が水面と人物を照らし、暖かい色調で幻想的な雰囲気を醸し出しています。3.日常の一場面:船の上で釣りを楽しむという日常的なシーンが描かれ、親しみやすさがあります。4.感情豊かな構図:人物の真剣な表情や動作が捉えられており、彼の集中した心境を伝えています。5.自然との調和:水面に反射する光や波の表現が自然との一体感を強調し、平和で落ち着いた印象を与えます。"
-        ],
-        "story": "ある日、若い漁師の健太は、村の祭りで使う大きな鯛をどうにか手に入れたいと考えていました。しかし、彼の持っているのは小さな海老だけ。村の老人たちは「そんな小さな海老で大きな鯛を釣るなんて無理だ」と笑いましたが、健太は諦めませんでした。\n\n翌朝、健太は自分の小舟を出し、海老を餌にして海に出ました。彼は海老を丁寧に針につけ、海に投げ込みました。すると、思ったよりも早く大きな引きがありました。なんと、見事な鯛が釣れたのです。\n\n村に戻った健太は、その鯛を祭りに提供し、村人たちは驚きと喜びでいっぱいになりました。「海老で鯛を釣るとはこのことだ」と、村人たちは健太の勇気と知恵を称賛しました。その後、健太は村の英雄となり、祭りは大成功を収めました。",
-        "prompt": "\"In a small coastal village, a young fisherman named Kenta is determined to catch a large sea bream for the village festival using only a small shrimp as bait. The scene is set at dawn, with Kenta in his modest wooden boat, surrounded by the calm, shimmering sea. He is focused and hopeful, carefully attaching the shrimp to his fishing hook. As he casts his line into the water, the early morning sun casts a golden glow across the ocean. Moments later, the water ripples with a powerful tug, and Kenta's face lights up with determination and excitement. In the background, the quaint village and its anticipating residents await the festival. The image captures the essence of perseverance, ingenuity, and the unexpected triumph of using a small resource to achieve a big goal, reflecting a blend of traditional Japanese culture and coastal life.\""
-    },
-    {
         "answer": "転ばぬ先の杖",
         "image": "image9.png",
         "candidates": [
@@ -138,33 +65,6 @@
         ],
         "story": "ある日、若い冒険者のリクは山登りを計画していました。彼は準備を怠らず、地図やコンパス、登山道具をしっかりと揃えましたが、友人のケンは「そんなに準備しなくても大丈夫さ」と笑いました。\n\nしかし、リクは「転ばぬ先の杖」ということわざを思い出し、慎重に準備を進めました。出発の日、山の天気は急変し、霧が立ち込めました。ケンは道に迷い、困り果てていましたが、リクは地図とコンパスを使って正しい道を見つけました。\n\n無事に山を下りた後、ケンは「リクの準備がなければ、どうなっていたか分からない」と感謝しました。リクは微笑みながら、「転ばぬ先の杖だよ」と答えました。それ以来、ケンも計画を立てる時は慎重になり、二人はさらに良き仲間となりました。",
         "prompt": "\"In a mountainous landscape, young adventurer Riku is meticulously preparing for a hike, surrounded by maps, a compass, and climbing gear. His friend Ken, more carefree, stands nearby with a relaxed demeanor. As they embark on their journey, a sudden mist envelops the mountain, obscuring the path. Riku, with a determined expression, uses his map and compass to navigate through the foggy terrain, while Ken looks relieved yet humbled by Riku's foresight. The scene captures the contrast between Riku's preparedness and Ken's initial nonchalance, set against a backdrop of mist-covered peaks and a serene yet challenging natural environment. The image conveys a sense of adventure, caution, and the wisdom of being prepared, inspired by the Japanese proverb '転ばぬ先の杖' (A staff before stumbling).\""
-    },
-    {
-        "answer": "旅は道連れ世は情け",
-        "image": "image10.png",
-        "candidates": [
-            "画像から考えられる",
-            "をいくつか挙げてみますね。1.雨降って地固まる2.明けない夜はない3.弘法筆を選ばず4.火のないところに煙は立たぬ5.一期一会この画像から、対話や静かな時間の重要性、困難な状況でもポジティブな未来を見据えることなどのテーマを想像できます。"
-        ],
-        "features": [
-            "1.**暖かい雰囲気**:二人がキャンドルを囲んでいる場面のため、温かさや安らぎを感じさせる雰囲気があります。2.**自然の美しさ**:背景には壮大な山々と森林が描かれており、自然の美しさが際立っています。3.**詳細な描写**:木造の小屋のディテールや、人物の衣服の質感が非常に緻密に描かれています。4.**光と影の演出**:キャンドルの光と、小屋の中と外の光のコントラストが印象的で、立体感を演出しています。5.**物語性**:二人が親しげに談笑している様子から、物語が進行中であることを感じさせます。"
-        ],
-        "story": "ある日、旅人の健一は山道を歩いていました。彼は一人での旅を好むため、静かな時間を楽しんでいました。しかし、道中で急に天候が悪化し、激しい雨が降り始めました。健一は雨宿りを探していると、同じく旅をしている美咲という女性に出会いました。美咲も困っている様子で、二人は近くの小屋で雨宿りをすることにしました。\n\n小屋の中で、健一と美咲は旅の話をしながら時間を過ごしました。お互いの旅の目的やこれまでの経験を語り合ううちに、二人は次第に打ち解けていきました。雨が止むと、健一は「旅は道連れ世は情けと言うように、一人よりも誰かと一緒の方が心強いね」と微笑みました。\n\nその後、二人はお互いの旅を手伝い合いながら、共に山を下りることにしました。旅の終わりには、健一と美咲は新たな友情を築き、また会うことを約束して別れました。旅は道連れ世は情け、",
-        "prompt": "\"In a serene mountain landscape, two travelers—Kenichi, a solitary wanderer, and Misaki, a fellow adventurer—find shelter in a rustic cabin as a sudden storm unleashes heavy rain. The scene captures the intimate moment inside the cozy cabin, where candlelight flickers against wooden walls and raindrops patter on the roof. Kenichi and Misaki sit across from each other, sharing stories and laughter, their expressions warm and friendly. Outside, the storm rages on, with dark clouds and blurred lines of rain, contrasting the tranquil camaraderie inside. The image reflects the theme of companionship and kindness in unexpected encounters, set in a picturesque, mountainous backdrop.\""
-    },
-    {
-        "answer": "鉄は熱いうちに打て",
-        "image": "image2.png",
-        "candidates": [
-            "申し訳ありませんが、画像の内容については詳しく説明できません。ただし、画像の状況に関連する",
-            "をいくつか挙げることはできます。1.鉄は熱いうちに打て2.師匠の教えを忠実に守る3.千里の道も一歩から4.熱心に学ぶ者は成功する5.継続は力なりこれらの",
-            "は、学びや努力、そして適切なタイミングの重要性を示しています。"
-        ],
-        "features": [
-            "1.**歴史的な雰囲気**:伝統的な衣装を着た人物たちが登場し、歴史的な場面を描写しているように感じられます。2.**職人的なテーマ**:若い人物が鍛冶仕事をしている様子から、職人技や技術の伝承がテーマとされていることが伺えます。3.**自然な光の演出**:光が人物や背景に柔らかく当たり、温かみのあるシーンを演出しています。4.**師弟関係の象徴性**:年配の人物が見守るように立っていることから、師弟関係や指導の要素が感じられます。5.**伝統的建築の背景**:背景には伝統的な建物が描かれており、日本の文化的な風景が表現されています。"
-        ],
-        "story": "ある村に、若い鍛冶職人の健太がいました。ある日、師匠が新しい技術を教えてくれると聞き、健太は興奮しました。しかし、その夜、友人たちに誘われて祭りに行くことになり、翌朝には疲れ果てていました。\n\n師匠は「鉄は熱いうちに打て」と言い、健太にすぐに作業を始めるよう促しましたが、健太は怠けてしまいました。その結果、せっかくの熱した鉄をうまく加工できず、失敗してしまいます。\n\nその日、健太は自分の怠慢を悔やみました。師匠の言葉の意味を深く理解し、次の日からは新しい技術を学ぶために全力を尽くすことを誓いました。健太は、努力を惜しまず、ついに村一番の鍛冶職人として成長しました。\n\nこの経験を通して、健太は「鉄は熱いうちに打て」という教訓を心に刻み、どんな機会も逃さずに挑戦することの大切さを学びました。",
-        "prompt": "\"In a traditional Japanese village, a young blacksmith named Kenta stands in a modest forge, surrounded by tools and glowing embers. His face reflects a mix of determination and regret as he gazes at a piece of iron cooling on the anvil—evidence of a missed opportunity. The early morning light filters through the forge's window, casting a warm glow on his focused expression. Nearby, his wise master observes with a knowing look, embodying the lesson of 'strike while the iron is hot.' The scene captures the pivotal moment of realization and growth, with elements of Japanese craftsmanship and cultural tradition highlighted in the rustic, industrious setting.\""
     },
     {
         "answer": "笑う門には福来る",
@@ -194,5 +94,78 @@
         ],
         "story": "ある日、村の農夫たちは長引く干ばつに苦しんでいました。畑は枯れ果て、収穫は見込めません。村の長老は「焼け石に水だが、少しでも水を運んで畑に撒こう」と提案しました。しかし、若い農夫の健太は「そんなことしても意味がない」と反論します。「このままでは村が滅びる」と長老は説得を続け、村人たちは渋々ながらも協力することにしました。\n\nある日、突然の夕立が村を襲い、畑にたっぷりと雨が降りました。村人たちは歓喜し、長老の言葉の意味を理解しました。「焼け石に水でも、続けることが大切なんだ」と健太は反省し、村の皆と共に新たな希望を胸に抱きました。それからは、村全体が協力して畑を守ることを誓い、未来への一歩を踏み出しました。",
         "prompt": "\"In a drought-stricken village, a group of weary farmers, led by an elderly village elder, are seen carrying small buckets of water to their parched fields. The landscape is dry and cracked, with withered crops and a scorching sun overhead. Among them, a young farmer named Kenta stands with a skeptical expression, initially doubting the elder's plan. Suddenly, dark clouds gather in the sky, and a heavy downpour begins, soaking the fields and bringing relief to the villagers. The scene captures the transformation from despair to hope, with villagers rejoicing in the rain. The image reflects the themes of perseverance, community effort, and the unexpected blessings of nature, set in a rural, traditional Japanese setting.\""
+    },
+    {
+        "answer": "旅は道連れ世は情け",
+        "image": "image2.png",
+        "candidates": [
+            "申し訳ありませんが、この画像を識別することはできません。ただし、画像を見て思い浮かぶ",
+            "を挙げることはできます。以下にいくつかの例を示します。1.**「助け合いは力なり」**協力することで困難を乗り越えられることを意味します。2.**「二人三脚」**互いに協力して一つの目標を達成すること。3.**「急がば回れ」**安全で確実な方法を選ぶ方が結果的に早く目的を達成できること。4.**「石橋を叩いて渡る」**慎重に行動することを意味します。5.**「一寸先は闇」**未来のことは予測できない、何が起きるかわからないという意味です。これらは一般的な",
+            "で、状況によって選んでもらうと良いでしょう。"
+        ],
+        "features": [
+            "申し訳ありませんが、これはどなたなのかはわかりません。しかし、この画像の",
+            "をいくつか挙げることができます。1.**ドラマティックな瞬間**:急な崖のような場所で、一人の人物が他の人物に手を差し伸べている緊迫したシーンが描かれています。2.**自然の壮大さ**:背景には山々や森が広がり、自然のスケールの大きさが強調されています。3.**ディテールの豊かさ**:登場人物の衣服や背景の木々、岩など、非常に緻密に描かれており、細かな部分までよく表現されています。4.**色彩のコントラスト**:青空や緑の木々、人物の衣装が鮮やかに描かれており、色のコントラストが強く、視覚的に魅了します。5.**ストーリーテリングの要素**:人物の表情や動作から、背景にあるストーリーや心情が伺え、観る者の想像をかきたてます。"
+        ],
+        "story": "ある日、若い冒険者の健太は、険しい山道を一人で旅していました。彼は自分の力を試すため、誰の助けも借りずに進むことを決めていました。しかし、道中で崖から足を滑らせ、危うく命を落としかけます。その時、偶然通りかかった年配の旅人、陽一に助けられました。\n\n陽一は「旅は道連れ世は情け」と言い、健太に同行を提案します。最初は一人旅にこだわっていた健太も、陽一の知恵と経験に触れ、次第に心を開いていきます。\n\n二人は共に旅を続け、互いに助け合いながら困難を乗り越えました。健太は、誰かと一緒に旅をすることの大切さを実感し、陽一に感謝の意を伝えました。\n\n旅の終わり、健太は新たな友を得たことを喜び、これからも「旅は道連れ世は情け」を胸に刻み、さらなる冒険へと歩み出しました。",
+        "prompt": "\"In a rugged mountain landscape, a young adventurer named Kenta is navigating a narrow, treacherous path alone. He is depicted mid-fall, having slipped off a rocky cliff, with a look of surprise and fear on his face. Nearby, an older traveler named Yoichi is reaching out to save him, showcasing a moment of tension and rescue. The scene captures the contrast between Kenta's youthful determination and Yoichi's calm wisdom. The background features steep cliffs, dense forests, and a clear blue sky, symbolizing both the challenges and beauty of their journey. The image conveys themes of companionship, the importance of guidance, and the unexpected bonds formed during shared adventures, reflecting the essence of the Japanese proverb 'Traveling together makes the journey easier.'\""
+    },
+    {
+        "answer": "身から出た錆",
+        "image": "image10.png",
+        "candidates": [
+            "申し訳ありませんが、この画像を直接見ることはできませんが、オフィスの情景を想像して、関係ありそうな",
+            "を挙げますね。1.**七転び八起き**-何度失敗しても、立ち上がって頑張ること。2.**石の上にも三年**-辛抱強く続ければ成功するということ。3.**急がば回れ**-急ぐ時こそ、慎重に進むべきという意味。4.**働かざる者食うべからず**-働かずに利益を得ることはできない。5.**二兎を追う者は一兎をも得ず**-欲張って複数のことを同時にしようとすると、何一つ得られない。これらは、オフィスやビジネスの状況に関連する一般的な",
+            "です。"
+        ],
+        "features": [
+            "申し訳ありませんが、人物の特定はできません。しかし、この画像についての",
+            "をいくつか挙げることができます。1.**ビジネス環境**:画像には、オフィス内で働いている人々が描かれており、ビジネスシーンを描写しています。2.**緊張感のある雰囲気**:各人物が真剣に作業をしており、忙しさやストレスを感じる状況が表現されています。3.**対照的なライティング**:室内とビルの窓外の夜景が対照的で、照明がシーンの雰囲気を強調しています。4.**散らかったオフィス**:床に散らばる紙や無造作に置かれた書類が、忙しい職場環境を示しています。5.**集中する人物**:画像中央の人物が特に注目されており、何かに深く思案している様子が描かれています。"
+        ],
+        "story": "太郎さんは、会社での出世を狙って同僚の仕事を横取りし、自分の手柄にしていました。ある日、彼の行動が上司にバレてしまい、厳しい叱責を受けました。上司は「信頼を失ったら取り戻すのは難しいぞ」と忠告しましたが、太郎さんはどこ吹く風。数週間後、彼のプロジェクトが大失敗に終わり、責任を問われることに。彼は同僚たちに助けを求めましたが、誰も手を差し伸べてくれませんでした。「身から出た錆だね」と冷たく言われ、太郎さんは自分の行いを反省しました。結局、彼は信頼を取り戻すために一からやり直すことを決意し、真摯に取り組むことで少しずつ周囲の信頼を回復していきました。",
+        "prompt": "\"In a modern office environment, Taro, a young businessman, is depicted standing alone at his desk, looking stressed and regretful. Papers and a laptop are scattered around him, symbolizing his recent project failure. In the background, colleagues are seen working together, ignoring Taro, reflecting the loss of trust due to his previous actions. The office is bright and bustling, yet Taro's corner feels isolated and somber. This scene captures the themes of betrayal, consequence, and redemption, illustrating the proverb 'You reap what you sow' in a contemporary corporate setting.\""
+    },
+    {
+        "answer": "立つ鳥跡を濁さず",
+        "image": "image1.png",
+        "candidates": [
+            "申し訳ありませんが、人物に関する具体的な説明はできませんが、画像から考えられる",
+            "を挙げることは可能です。1.**支度八分**-物事を行う準備が整っているとき、本番も成功しやすいという意味。2.**石の上にも三年**-辛抱強く努力を続ければ、成功が得られるという教え。3.**急がば回れ**-急ぐ時ほど慎重に行動することが重要だという意味。4.**三人寄れば文殊の知恵**-複数で協力すれば良いアイディアが生まれるということ。5.**倉まで届け**-丁寧に準備や作業を行うことが、最終的な成功につながること。これらの",
+            "は、ビジネスやチームワークの場面で適用できる可能性があります。"
+        ],
+        "features": [
+            "1.**柔らかな光の演出**:大きな窓から差し込む自然光が、室内の雰囲気を柔らかく演出しています。人物や物の陰影が綺麗に表現されています。2.**落ち着いた色調**:全体的に落ち着いた色のトーンが使われており、シックでモダンな印象を与えます。特に、ブラウンとグレーが基調です。3.**ビジネスシーンの描写**:人物たちはビジネスカジュアルな服装をしており、書類や箱を使っていることから仕事中のシーンであることが示唆されています。4.**協力的な雰囲気**:複数の人々が集まっていることから、会議や協力を示すシーンであり、コミュニケーションが強調されています。5.**都会的な背景**:窓の外に見えるビルが都会的な背景を形成しており、現代的なオフィスのシチュエーションを示しています。"
+        ],
+        "story": "ある日、若いサラリーマンの健太は、転職を決意しました。彼は新しい職場での挑戦に胸を躍らせつつも、今の職場での最後の日を迎えることに少し寂しさを感じていました。退職の日、健太はデスク周りをきれいに整理し、同僚たちに感謝の言葉を伝えました。彼は自分の引き継ぎ資料を完璧に整え、後任者が困らないように準備を整えました。\n\nそして、退社前にチーム全員に小さな手土産を配り、「立つ鳥跡を濁さず」と心に決めて、最後まで誠実に努めました。健太が去った後、彼の丁寧な仕事ぶりと心遣いに、同僚たちは感謝の気持ちを抱きました。新しい道を進む健太の背中を見送りながら、彼らはその姿勢を見習おうと心に誓いました。",
+        "prompt": "\"In a modern office setting, a young businessman named Kenta is seen tidying up his desk on his last day at work. The office is filled with natural light streaming through large windows, casting a warm glow on the scene. Kenta is organizing his documents meticulously, ensuring everything is in place for his successor. Colleagues are gathered around, some chatting and others expressing gratitude. Kenta is handing out small farewell gifts to his team, embodying the spirit of 'leaving no trace.' The atmosphere is a mix of nostalgia and anticipation, capturing Kenta's professionalism and thoughtfulness as he prepares to embark on a new career path.\""
+    },
+    {
+        "answer": "石の上にも三年",
+        "image": "image3.png",
+        "candidates": [
+            "申し訳ありませんが、この画像を基に具体的な",
+            "を示すことはできません。ただし、石工の仕事や工芸に関連する一般的な",
+            "をいくつか紹介します：1.**石の上にも三年**-辛抱し続ければ成果が出るという意味。2.**千里の道も一歩から**-大きなことも始めは小さな一歩から始まるという意味。3.**習うより慣れろ**-学ぶよりも実際に経験することが大事という意味。4.**雨垂れ石を穿つ**-小さなことでも根気よく続ければ成果が出るという意味。5.**急がば回れ**-焦らずに慎重に取り組むことが大切という意味。このような",
+            "は、熟練を要する職人の仕事にも通じるものがあります。"
+        ],
+        "features": [
+            "1.親密なシーン:画像は石彫りをしている職人の姿をクローズアップで捉えており、親密な雰囲気を感じさせます。2.作業のリアリズム:石を削る際の粉塵や彫り込んだ造形のディテールが緻密に描かれており、リアリティが強調されています。3.落ち着いた色調:背景と人物の服装には落ち着いた色調が使われており、作業の静けさや集中力を表現しています。4.光の演出:天井から差し込む光が作業台を照らしていることで、場面にドラマチックな印象を与えています。5.伝統と技術:伝統的な工房の中で職人たちが石を扱う様子が描かれており、歴史ある技術と文化の継承を感じさせます。"
+        ],
+        "story": "ある日、若い職人の健太は、町の石工場で働き始めました。彼は石を削る技術を身につけたいと強く願っていましたが、最初の一年は思うようにいかず、何度も挫折しそうになりました。周りの先輩たちの技術に圧倒され、自分の未熟さを痛感する日々が続きました。\n\n二年目になると、少しずつ石の扱いに慣れてきたものの、まだまだ理想には程遠いと感じていました。それでも健太は諦めず、毎日コツコツと練習を重ねました。\n\nそして三年目、健太はついに自分の手で見事な石像を完成させました。その作品は工場の人々から称賛され、彼自身も驚くほどの出来栄えでした。健太はその時、「石の上にも三年」とはこのことか、と実感しました。努力を続けた結果が実を結び、彼は自信を持って次の挑戦に向かうことができました。",
+        "prompt": "\"In a bustling town's stone workshop, a young artisan named Kenta is seen diligently working on a large stone block. The workshop is filled with the sounds of chiseling and the sight of dust particles dancing in the sunlight that filters through the windows. In the background, experienced craftsmen are skillfully carving intricate designs into stone. Kenta, with a focused expression, is surrounded by his earlier attempts—rough, unfinished pieces that contrast with the smooth, detailed statue he is now crafting. His hands are steady, and his eyes reflect determination and growth. The scene captures the essence of perseverance and the passage of time, with a sense of achievement as Kenta finally creates a masterpiece. The image embodies the spirit of the proverb '石の上にも三年', illustrating the rewards of patience and hard work.\""
+    },
+    {
+        "answer": "急がば回れ",
+        "image": "image5.png",
+        "candidates": [
+            "この画像から連想される",
+            "をいくつか挙げてみますね。1.**「聞くは一時の恥、聞かぬは一生の恥」**-賢者に道を尋ねる様子から、学ぶことの重要性を示します。2.**「千里の道も一歩から」**-長い旅が一歩から始まるように、大きな計画も小さな行動から始まることを示します。3.**「猪突猛進」**-地図を見て慎重に進む姿からは逆に、ただ前だけを見て進むことの危険性を考えさせます。4.**「急がば回れ」**-山道を進む旅では、安全に進むために時には遠回りを選ぶ必要があることを示唆します。5.**「道は遠し」**-山々を越える険しい道から、目標に至るまでの道のりの長さを表現します。これらの",
+            "は、この画像の雰囲気と状況に関連しそうですね。"
+        ],
+        "features": [
+            "1.**冒険的なテーマ**:中央の青年が地図を持ち、冒険を象徴している。周囲にいる仲間たちも共に旅をする雰囲気を醸し出している。2.**幻想的な風景**:背景に描かれた雄大な山々と輝く太陽が、幻想的な雰囲気を作り出している。3.**詳細な描写**:登場人物や自然の要素が非常に細かく描かれており、絵画的な細部にこだわりが感じられる。4.**温かい色調**:夕日を思わせる温かい色調が全体を包み込み、和やかで心地よい雰囲気を演出している。5.**文化的要素**:伝統的な服装をした年配の男性が登場し、文化的な背景や知恵の伝達を示唆している。"
+        ],
+        "story": "ある日、若い冒険家の健太は、山頂にある伝説の宝を手に入れようと決意しました。地図を手に取り、最短ルートを選んで急いで出発しました。しかし、その道は険しく、彼は何度も転んで怪我をしてしまいました。疲れ果てた健太は、ふと立ち止まりました。そこで出会った地元の老人が言いました。「急がば回れ、若者よ。安全な道を選びなさい。」\n\nその言葉に従い、健太は遠回りの道を選びました。道中、彼は美しい景色や親切な人々と出会い、旅を楽しむことができました。やがて山頂に到着したとき、健太は無事に宝を手に入れることができました。彼は振り返り、老人の言葉の意味を深く理解しました。「急がば回れ」と。これからの人生も、焦らず慎重に進むことを心に誓いました。",
+        "prompt": "\"In a serene mountainous landscape, a young adventurer named Kenta is depicted standing at a crossroads. He holds a map in one hand, contemplating his journey. The path he initially chose is rugged and treacherous, visible with steep cliffs and loose rocks. Nearby, a wise old local, with a gentle and knowing expression, points towards a more scenic and safer route. This alternative path is lined with vibrant wildflowers and offers breathtaking views of distant peaks. Along this path, friendly villagers are seen, some waving and others offering guidance. The scene captures the essence of Kenta's realization and the beauty of taking a mindful, patient approach to life's challenges. The morning sun bathes the landscape in a warm, golden light, symbolizing hope and enlightenment.\""
     }
 ]
