@@ -215,5 +215,25 @@
         ],
         "story": "ある日、探偵の佐藤は、町で起きた宝石盗難事件の捜査をしていました。彼は町中を駆け回り、あらゆる手がかりを探しましたが、犯人の足取りはつかめませんでした。疲れ果てた佐藤は、自宅に戻り、ふとデスクの上に置かれた新聞を手に取りました。すると、そこには自分が初めて訪れた現場の写真が載っており、なんとその背景に怪しい影が映っていたのです。「まさに灯台下暗しだ」と、佐藤は自嘲気味に笑いました。犯人は最初から目の前にいたのです。彼はすぐにその手がかりをもとに、犯人を追い詰め、無事に事件を解決しました。佐藤は、何事も見落とさないよう心に誓いました。",
         "prompt": "\"In a small town, detective Sato is seen in his cluttered home office, surrounded by stacks of papers and evidence boards. He is holding a newspaper with a photo of the crime scene, where a shadowy figure can be seen in the background. The room is dimly lit, with a single desk lamp casting a warm glow on Sato's face, highlighting his expression of realization and determination. Outside the window, the town is quiet under a starry night sky. The image captures the moment of discovery and the detective's resolve, blending elements of a classic mystery with a modern urban setting.\""
+    },
+    {
+        "answer": "人事を尽くして天命を待つ",
+        "image": "image8.png",
+        "candidates": [
+            "石の上にも三年",
+            "二人三脚",
+            "雨降って地固まる",
+            "初心忘るべからず",
+            "蒔かぬ種は生えぬ"
+        ],
+        "features": [
+            "人が田んぼで作業しているシーンが描かれており、自然と人間が調和している様子が感じられます。",
+            "雲間から差し込む光が幻想的で、全体にドラマチックな雰囲気を与えています。",
+            "人物や水田、背景の山々といった各要素が非常に細かく描かれ、リアリスティックで魅力的です。",
+            "静かで落ち着いた雰囲気が漂い、農作業の一場面としての静寂を感じさせます。",
+            "豊かな緑や空の雲、山々が力強く描かれ、自然の偉大さが表現されています。"
+        ],
+        "story": "ある村に、若い農夫の健太が住んでいました。彼は今年こそ豊作を願い、畑を精一杯耕し、種をまき、毎日欠かさず水やりを続けました。日々の努力を惜しまず、土壌の状態を見極め、最良の肥料を選びました。しかし、天候は彼の思い通りにはいきません。長雨が続き、作物の成長が心配になりました。\n\nそんなある日、村の長老が健太に声をかけました。「人事を尽くして天命を待つ、という言葉を知っているかい？」と。健太は頷き、思い直しました。自分ができる限りのことをしたのだから、あとは天に任せるしかないと。\n\n結果、天気は回復し、作物は無事に育ちました。収穫の日、健太は自分の努力が実を結んだことを実感し、感謝の気持ちを胸に刻みました。彼は長老の言葉を忘れず、これからも全力を尽くすことを誓いました。",
+        "prompt": "\"In a serene rural village, a young farmer named Kenta is seen diligently tending to his lush green fields. The scene captures him amidst rows of sprouting crops, with a watering can in hand and a determined expression on his face. The sky is overcast, hinting at the recent long rains, but a ray of sunlight breaks through the clouds, illuminating Kenta and his thriving plants. Nearby, an elderly village elder stands, offering wise counsel with a gentle smile. The image conveys themes of perseverance, hope, and the balance between human effort and nature's will, set against a backdrop of a tranquil countryside landscape.\""
     }
 ]
