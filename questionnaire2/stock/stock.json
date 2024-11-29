@@ -67,21 +67,6 @@
         "prompt": "\"In a mountainous landscape, young adventurer Riku is meticulously preparing for a hike, surrounded by maps, a compass, and climbing gear. His friend Ken, more carefree, stands nearby with a relaxed demeanor. As they embark on their journey, a sudden mist envelops the mountain, obscuring the path. Riku, with a determined expression, uses his map and compass to navigate through the foggy terrain, while Ken looks relieved yet humbled by Riku's foresight. The scene captures the contrast between Riku's preparedness and Ken's initial nonchalance, set against a backdrop of mist-covered peaks and a serene yet challenging natural environment. The image conveys a sense of adventure, caution, and the wisdom of being prepared, inspired by the Japanese proverb '転ばぬ先の杖' (A staff before stumbling).\""
     },
     {
-        "answer": "笑う門には福来る",
-        "image": "image11.png",
-        "candidates": [
-            "この画像から考えられる",
-            "を5つ挙げると:1.災い転じて福となす2.先んずれば人を制す3.知恵は力なり4.警鐘を鳴らす5.一寸先は闇これらの",
-            "は、危機を前にした知恵や警告の重要性と関係しています。"
-        ],
-        "features": [
-            "1.温かみのある雰囲気:建物の中からあふれる暖かな光と、人々の笑顔が全体的に温かみのある雰囲気を醸し出しています。2.カラフルな色使い:衣服や花、建物が鮮やかな色彩で描かれており、視覚的にインパクトがあります。3.コミュニケーションの象徴:中央に立つ人物を囲むように集まった人々が会話や交流を示唆しており、人間関係の調和が感じられます。4.自然の力の表現:背景には大きな波が描かれており、自然の圧倒的な力とそれに対峙する人々の対比が",
-            "です。5.日常と非日常の融合:家や庭の穏やかな様子と、迫り来る壮大な波のコントラストが、日常と非日常の境界を表現しています。"
-        ],
-        "story": "ある小さな村に、いつも笑顔を絶やさない陽気な男、健太が住んでいました。彼の家はいつも明るく、訪れる人々を笑顔で迎えるため、村人たちは「笑う門には福来る」と言って彼の家を称賛しました。\n\nある日、村に大きな嵐がやってきて、多くの家が被害を受けました。しかし、健太の家だけは無事でした。村人たちは不思議に思い、どうして健太の家は無事だったのか尋ねました。健太は笑って言いました。「毎日笑っていると、福が来て守ってくれるんだよ。」\n\n村人たちはその言葉を信じ、健太のように毎日笑顔を心がけるようになりました。不思議なことに、村全体に幸福が訪れ、次第に人々の心が豊かになっていきました。村人たちは改めて「笑う門には福来る」の意味を実感し、健太に感謝しました。",
-        "prompt": "\"In a small, picturesque village, a cheerful man named Kenta is known for his ever-present smile and welcoming home. His house stands untouched amidst the aftermath of a fierce storm, while other homes show signs of damage. Curious villagers gather around Kenta's bright and inviting home, which is adorned with flowers and a warm glow, as he explains with a hearty laugh that his constant laughter brings good fortune and protection. The scene captures the contrast between the storm's aftermath and the untouched serenity of Kenta's home, with villagers inspired by his positive spirit. The image reflects themes of joy, resilience, and the power of a positive attitude, set in a quaint, idyllic village landscape.\""
-    },
-    {
         "answer": "焼け石に水",
         "image": "image12.png",
         "candidates": [
@@ -167,5 +152,19 @@
         ],
         "story": "ある日、若い冒険家の健太は、山頂にある伝説の宝を手に入れようと決意しました。地図を手に取り、最短ルートを選んで急いで出発しました。しかし、その道は険しく、彼は何度も転んで怪我をしてしまいました。疲れ果てた健太は、ふと立ち止まりました。そこで出会った地元の老人が言いました。「急がば回れ、若者よ。安全な道を選びなさい。」\n\nその言葉に従い、健太は遠回りの道を選びました。道中、彼は美しい景色や親切な人々と出会い、旅を楽しむことができました。やがて山頂に到着したとき、健太は無事に宝を手に入れることができました。彼は振り返り、老人の言葉の意味を深く理解しました。「急がば回れ」と。これからの人生も、焦らず慎重に進むことを心に誓いました。",
         "prompt": "\"In a serene mountainous landscape, a young adventurer named Kenta is depicted standing at a crossroads. He holds a map in one hand, contemplating his journey. The path he initially chose is rugged and treacherous, visible with steep cliffs and loose rocks. Nearby, a wise old local, with a gentle and knowing expression, points towards a more scenic and safer route. This alternative path is lined with vibrant wildflowers and offers breathtaking views of distant peaks. Along this path, friendly villagers are seen, some waving and others offering guidance. The scene captures the essence of Kenta's realization and the beauty of taking a mindful, patient approach to life's challenges. The morning sun bathes the landscape in a warm, golden light, symbolizing hope and enlightenment.\""
+    },
+    {
+        "answer": "灯台下暗し",
+        "image": "image11.png",
+        "candidates": [
+            "私が挙げる",
+            "の例は、以下の通りです。この画像には忙しそうに仕事している様子が描かれています。1.**七転び八起き**-困難な状況でも何度でも立ち上がることを示します。2.**昼夜兼行**-昼も夜も懸命に働くことを意味します。3.**石の上にも三年**-辛抱強く続けることが大切であるという意味です。4.**棚からぼたもち**-努力の結果ではなく、偶然に良いことが起こる様子を表します。5.**頭を抱える**-考えすぎて悩む様子を示します。このような",
+            "が考えられます。"
+        ],
+        "features": [
+            "1.**夜景と都市の対比**:窓の外には高層ビルの夜景が広がり、都会の忙しさと室内の静けさが対比されています。2.**詳細な描写**:部屋の中の大量の書類や本、壁に貼られたメモや記事が細かく描かれ、リアリティが感じられます。3.**集中する人物**:中心の人物が新聞をじっくりと読んでおり、何か重要な情報を得ようとしている雰囲気が漂っています。4.**照明の効果**:部屋のランプが暖かい光を放ち、人物の顔と周囲の書類を優しく照らし出し、落ち着いた印象を与えています。5.**ストーリー性のある構図**:整然とした一方で雑然とした部屋が、人物の仕事や生活の一部を物語っているようです。"
+        ],
+        "story": "ある日、探偵の佐藤は、町で起きた宝石盗難事件の捜査をしていました。彼は町中を駆け回り、あらゆる手がかりを探しましたが、犯人の足取りはつかめませんでした。疲れ果てた佐藤は、自宅に戻り、ふとデスクの上に置かれた新聞を手に取りました。すると、そこには自分が初めて訪れた現場の写真が載っており、なんとその背景に怪しい影が映っていたのです。「まさに灯台下暗しだ」と、佐藤は自嘲気味に笑いました。犯人は最初から目の前にいたのです。彼はすぐにその手がかりをもとに、犯人を追い詰め、無事に事件を解決しました。佐藤は、何事も見落とさないよう心に誓いました。",
+        "prompt": "\"In a small town, detective Sato is seen in his cluttered home office, surrounded by stacks of papers and evidence boards. He is holding a newspaper with a photo of the crime scene, where a shadowy figure can be seen in the background. The room is dimly lit, with a single desk lamp casting a warm glow on Sato's face, highlighting his expression of realization and determination. Outside the window, the town is quiet under a starry night sky. The image captures the moment of discovery and the detective's resolve, blending elements of a classic mystery with a modern urban setting.\""
     }
 ]
