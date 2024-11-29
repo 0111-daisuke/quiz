@@ -29,7 +29,7 @@ def read_json(file_path):
 def get_random_data():
     data = read_json(file_path)
     random_index = random.randint(0, len(data) - 1)
-    return data[random_index]
+    return data[5]
 
 # テーマの取得
 def theme():
@@ -90,8 +90,7 @@ def main():
                         1.正解は当てられるまで言わない
                         2.友達口調で発言する
                         3.ヒントを求められたら画像の特徴を参考にして教える
-                        4.Userに話を振る
-                        5.会話は100文字以内にまとめる
+                        4.会話は100文字以内にまとめる
 
                         以下に問題例と対話例を示します。
                         --------------------------

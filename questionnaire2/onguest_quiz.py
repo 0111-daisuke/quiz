@@ -38,7 +38,7 @@ def read_json(file_path):
 def get_random_data():
     data = read_json(file_path)
     random_index = random.randint(0, len(data) - 1)
-    return data[random_index]
+    return data[11]
 
 # テーマの取得
 def theme():
