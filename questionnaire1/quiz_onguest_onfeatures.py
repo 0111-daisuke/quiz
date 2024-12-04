@@ -4,7 +4,7 @@ import json
 import os
 
 client = OpenAI()
-file_path = "stock/stock.json"
+file_path = "../questionnaire2/stock/stock.json"
 green = "\033[32m"
 blue = "\033[34m"
 color_end = "\033[0m"
@@ -57,7 +57,7 @@ def read_json(file_path):
 # ランダムなデータを取得する関数
 def get_random_data():
     data = read_json(file_path)
-    return data[28]
+    return data[11]
 
 # テーマの取得
 def theme():
