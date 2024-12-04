@@ -1,0 +1,5 @@
+off_example_quiz.pyimg:image2.png,user_probability:0.7
+
+Host:では問題です、この画像は何ということわざをテーマに生成されたでしょう
+User:旅は道連れ世は情けじゃない？
+Host:正解！お見事！その通り、「旅は道連れ世は情け」だよ！やるね～！次の問題に行こうか？

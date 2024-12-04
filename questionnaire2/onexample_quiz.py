@@ -38,7 +38,7 @@ def read_json(file_path):
 def get_random_data():
     data = read_json(file_path)
     random_index = random.randint(0, len(data) - 1)
-    return data[11]
+    return data[8]
 
 # テーマの取得
 def theme():
@@ -128,8 +128,7 @@ def main():
                         1.正解は当てられるまで言わない
                         2.友達口調で発言する
                         3.ヒントを求められたら画像の特徴を参考にして教える
-                        4.UserかGuestに話を振る
-                        5.会話は100文字以内にまとめる
+                        4.会話は100文字以内にまとめる
 
                         以下に問題例と対話例を示します。
                         --------------------------
@@ -190,7 +189,7 @@ def main():
         {
         "role": "system",
         "content": f"""
-                    あなたは司会によって提示された画像を見て元となったことわざを当てるクイズに参加しています。
+                    あなたは司会であるHostによって提示された画像を見て元となったことわざを当てるクイズに参加しています。
                     あなたはGuestとして参加しています。もう一人の回答者であるUserを楽しませられるように行動します。
                     以下の点に気を付けて発言してください。
                     1.正解は言わない
@@ -238,7 +237,7 @@ def main():
     branch_messages = [
         {"role": "system", 
          "content": f"""
-                    これはUserとGuestが会話しつつHostが出題するクイズに答える文です。
+                    これはHostが出題するクイズにUserとGuestが答える文です。
                     あなたはこの対話履歴を見て文脈を考慮したうえで誰が次に喋るか予想して教えてください。
                     また、そう予想した理由を答えてください。
 
@@ -264,7 +263,7 @@ def main():
         guest_messages.append({"role": user2, "content": res})
         branch_messages.append({"role": "user", "content": res})
 
-    # userが会話する確率
+    # 最初にuserが会話する確率
     user_probability = 0.7
 
     # 変数の初期化
@@ -272,14 +271,15 @@ def main():
     n = 0
 
     # 初期情報の保存
-    log = f'img:{image}, user_probability:{user_probability}\n'
+    log = "on_example_quiz.py\n"
+    log += f'img:{image}, user_probability:{user_probability}\n'
 
     # 1文目
     res = "Host:では問題です、この画像は何ということわざをテーマに生成されたでしょう"
     # プロンプトに文章を追加
     append_message("assistant", "user", res)
     # 保存
-    log = res
+    log += res
     # 表示
     res = re.sub(r'^(Host:)+', '', res)
     print(green + "Host:" + color_end + res)
