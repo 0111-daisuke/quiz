@@ -8,4 +8,4 @@ pip install openai
 
 export "OPENAI_API_KEY"=[APIKEY]
 
-python quiz.py
+python quiz/quiz.py
